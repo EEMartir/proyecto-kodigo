@@ -17,30 +17,28 @@ class ToSeconds implements ConversorTiempo {
     $this->original = $original;
     $this->valor = $valor;
 
-    switch ($original) {
-      case 'seg':
-        $resultado = "Misma unidad de tiempo";
-        break;
-      case 'min':
-        $resultado = $valor * 60;
-        break;
-      case 'h':
-        $resultado = $valor * 3600;
-        break;
-      case 'd':
-        $resultado = $valor * 86400;
-        break;
-      case 'sm':
-        $resultado = $valor * 604800;
-        break;
-      case 'm':
-        $resultado = $valor * 2678400;
-        break;
-      default:
-        echo "Este valor no existe";
-        break;
-    }
+    if($original == "seg") {
+      return "Misma unidad de tiempo";
+  } elseif ($original == "min") {
+      $resultado = $valor * 60;
+      return $resultado;
+  } elseif ($original == "h") {
+      $resultado = $valor * 3600;
+      return $resultado;
+
+  } elseif ($original == "d") {
+      $resultado = $valor * 86400;
+      return $resultado;
+  } elseif ($original == "sm") {
+      $resultado = $valor * 604800;
+      return $resultado;
+  } elseif($original == "m") {
+      $resultado = $valor * 2678400;
+      return $resultado;
+  } else {
+      return "Tiempo no valido";
   }
+}
 }
 
 class ToMinutes implements ConversorTiempo {
@@ -131,22 +129,22 @@ class ToDays implements ConversorTiempo {
 
     switch ($original) {
       case 'seg':
-        $resultado = $valor / 86400;
+        return $resultado = $valor / 86400;
         break;
       case 'min':
-        $resultado = $valor / 1440;
+       return $resultado = $valor / 1440;
         break;
       case 'h':
-        $resultado = $valor / 24;
+        return $resultado = $valor / 24;
         break;
       case 'd':
-        $resultado = "Misma unidad de tiempo";
+        return $resultado = "Misma unidad de tiempo";
         break;
       case 'sm':
-        $resultado = $valor * 7;
+         return $resultado = $valor * 7;
         break;
       case 'm':
-        $resultado = $valor * 30.4375;
+       return  $resultado = $valor * 30.4375;
         break;
       default:
         echo "Este valor no existe";
@@ -226,7 +224,7 @@ class ToMonths implements ConversorTiempo {
       default:
         echo "Este valor no existe";
         break;
-        
+
     }
 
   }

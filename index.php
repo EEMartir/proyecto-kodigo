@@ -35,6 +35,7 @@
     }  elseif($_GET['datos']){
         require 'Secciones/seccion-datos.php';
     }  elseif($_GET['tiempo']){
+        require 'Controlador/logica-tiempo.php';
         require 'Secciones/seccion-tiempo.php';
     }
     ?>

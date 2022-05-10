@@ -16,20 +16,20 @@ if(isset($_POST['tiempo1']) &&
     if($tiempo2 == 'seg') {
 
       $convertToSeconds = new ToSeconds();
-      $resultado = $convertirToSeconds->originalTiempo($tiempo1, $valor);
+      $resultado = $convertToSeconds->originalTiempo($_POST['tiempo1'], $_POST['valor']);
 
     } elseif ($tiempo2 == 'min') {
       $convertToMinutes = new ToMinutes();
-      $resultado = $convertToMinutes->originalTiempo($tiempo1, $valor);
+      $resultado = $convertToMinutes->originalTiempo($_POST['tiempo1'], $_POST['valor']);
     } elseif ($tiempo2 == 'h') {
       $convertToHours = new ToHours();
-      $resultado = $convertToHours->originalTiempo($tiempo1, $valor);
+      $resultado = $convertToHours->originalTiempo($_POST['tiempo1'], $_POST['valor']);
     } elseif ($tiempo2 == 'd') {
       $convertToDays = new ToDays();
-      $resultado = $convertToDays->originalTiempo($tiempo1, $valor);
+      $resultado = $convertToDays->originalTiempo($_POST['tiempo1'], $_POST['valor']);
     } elseif ($tiempo2 == 'm') {
       $convertToMonths = new ToMonths();
-      $resultado = $convertToMonths->originalTiempo($tiempo1, $valor);
+      $resultado = $convertToMonths->originalTiempo($_POST['tiempo1'], $_POST['valor']);
     } else {
       $resultado = "Tiempo no valido";
     }

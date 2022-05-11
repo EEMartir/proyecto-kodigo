@@ -27,6 +27,7 @@
         require 'Controlador/logica-moneda.php';
         require 'Secciones/seccion-moneda.php';
     } elseif($_GET['longitud']){
+        require 'Controlador/logica-longitud.php';
         require 'Secciones/seccion-longitud.php';
     }  elseif($_GET['masa']){
         require 'Secciones/seccion-masa.php';

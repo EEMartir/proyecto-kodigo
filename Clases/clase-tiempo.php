@@ -54,22 +54,22 @@ class ToMinutes implements ConversorTiempo {
 
     switch ($original) {
       case 'seg':
-        $resultado = $valor / 60;
+        return $resultado = $valor / 60;
         break;
       case 'min':
-        $resultado = "Misma unidad de tiempo";
+        return $resultado = "Misma unidad de tiempo";
         break;
       case 'h':
-        $resultado = $valor * 60;
+        return $resultado = $valor * 60;
         break;
       case 'd':
-        $resultado = $valor * 1440;
+        return $resultado = $valor * 1440;
         break;
       case 'sm':
-        $resultado = $valor * 10080;
+        return $resultado = $valor * 10080;
         break;
       case 'm':
-        $resultado = $valor * 43829.2;
+        return $resultado = $valor * 43829.2;
         break;
       default:
         echo "Este valor no existe";
@@ -91,22 +91,22 @@ class ToHours implements ConversorTiempo {
 
     switch ($original) {
       case 'seg':
-        $resultado = $valor / 3600;
+        return $resultado = $valor / 3600;
         break;
       case 'min':
-        $resultado = $valor / 60;
+        return $resultado = $valor / 60;
         break;
       case 'h':
-        $resultado = "Misma unidad de tiempo";
+        return $resultado = "Misma unidad de tiempo";
         break;
       case 'd':
-        $resultado = $valor * 24;
+        return $resultado = $valor * 24;
         break;
       case 'sm':
-        $resultado = $valor * 168;
+        return $resultado = $valor * 168;
         break;
       case 'm':
-        $resultado = $valor * 730.48;
+        return $resultado = $valor * 730.48;
         break;
       default:
         echo "Este valor no existe";
@@ -166,22 +166,22 @@ class ToWeeks implements ConversorTiempo {
 
     switch ($original) {
       case 'seg':
-        $resultado = $valor / 604800;
+        return $resultado = $valor / 604800;
         break;
       case 'min':
-        $resultado = $valor / 10080;
+        return $resultado = $valor / 10080;
         break;
       case 'h':
-        $resultado = $valor / 168;
+        return $resultado = $valor / 168;
         break;
       case 'd':
-        $resultado = $valor / 7;
+        return $resultado = $valor / 7;
         break;
       case 'sm':
-        $resultado = "Misma unidad de tiempo";
+        return $resultado = "Misma unidad de tiempo";
         break;
       case 'm':
-        $resultado = $valor * 4.34812;
+        return $resultado = $valor * 4.34812;
         break;
       default:
         echo "Este valor no existe";
@@ -204,22 +204,22 @@ class ToMonths implements ConversorTiempo {
 
     switch ($original) {
       case 'seg':
-        $resultado = $valor / 2678400;
+        return $resultado = $valor / 2678400;
         break;
       case 'min':
-        $resultado = $valor / 43829.2;
+        return $resultado = $valor / 43829.2;
         break;
       case 'h':
-        $resultado = $valor / 730.48;
+        return $resultado = $valor / 730.48;
         break;
       case 'd':
-        $resultado = $valor / 30.4375;
+        return $resultado = $valor / 30.4375;
         break;
       case 'sm':
-        $resultado = $valor / 4.34812;
+        return $resultado = $valor / 4.34812;
         break;
       case 'm':
-        $resultado = "Misma unidad de tiempo";
+        return $resultado = "Misma unidad de tiempo";
         break;
       default:
         echo "Este valor no existe";

@@ -29,10 +29,12 @@
     } elseif($_GET['longitud']){
         require 'Secciones/seccion-longitud.php';
     }  elseif($_GET['masa']){
+        require 'Controlador/logica-masa.php';
         require 'Secciones/seccion-masa.php';
     }  elseif($_GET['volumen']){
         require 'Secciones/seccion-volumen.php';
     }  elseif($_GET['datos']){
+        require 'Controlador/logica-datos.php';
         require 'Secciones/seccion-datos.php';
     }  elseif($_GET['tiempo']){
         require 'Secciones/seccion-tiempo.php';

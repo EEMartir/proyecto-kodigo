@@ -157,4 +157,42 @@ class ToHectometers implements ConversorLongitud {
 
 }
 
+class ToKilometers implements ConversorLongitud {
+  //millimeters to kilometers ----- [amount] / 1000000
+  //centimetres to kilometers ----- [amount] / 100000
+  //decimetres to kilometers ----- [amount] / 10000
+  //meter to kilometers ----- [amount] / 1000
+  //hectometres to kilometers ----- [amount] / 10
+
+  public function originalLongitud($original, $valor) {
+    $this->original = $original;
+    $this->valor = $valor;
+
+    switch ($original) {
+      case 'mm':
+        return $resultado = $valor / 1000000;
+        break;
+      case 'cm':
+        return $resultado = $valor / 100000;
+        break;
+      case 'dm':
+        return $resultado = $valor / 10000;
+        break;
+      case 'm':
+        return $resultado = $valor / 1000;
+        break;
+      case 'hm':
+        return $resultado = $valor / 10;
+        break;
+      case 'km':
+        return $resultado = "Misma unidad de longitud";
+        break;
+      default:
+      echo "Longitud no valida";
+        break;
+        
+    }
+  }
+}
+
 ?>

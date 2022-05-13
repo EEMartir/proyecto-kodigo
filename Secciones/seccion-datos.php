@@ -1,7 +1,37 @@
+<style>
+h1{
+    text-align: center;
+}
+p{
+    text-align: center;
+}
+
+.form-container{
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.form-section{
+    margin-top: 20px;
+    width: 50%;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 28px 11px rgba(99,99,99,0.75);
+-webkit-box-shadow: 0px 0px 28px 11px rgba(99,99,99,0.75);
+-moz-box-shadow: 0px 0px 28px 11px rgba(99,99,99,0.75);
+}
+
+</style>
+
 <h1>Conversor de Datos</h1>
 <p>Indica el dato original, el valor del dato, seguido del tipo de dato al que quieres convertir</p>
-    
-<form action="" method="POST">
+
+<div class="form-container">
+<form class="form-section" action="" method="POST">
 
     <label for="Convertir1">Convertir de: </label><br/>
     <select name="datos1" id="datos1">
@@ -38,6 +68,7 @@
     <input type="submit" value="Convertir" name="convertir">
 
     </form>
+    </div>
 
     <?php
     if($resultado != false) {

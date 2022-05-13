@@ -3,7 +3,6 @@
 
 interface Conversor { 
     public function originalCurrency($original, $valor);
-    
 }
 
 // ==================================================================================================================
@@ -18,23 +17,29 @@ class toEuro implements Conversor {
         $this->original = $original;
         $this->valor = $valor;
 
-        if($original == "us$" ){
-            $resultado = $valor / 1.08;
-            return $resultado;
-        } elseif ($original == "ca$") { 
-            $resultado = $valor / 1.36;
-            return $resultado;
-        } elseif ($original == "yen") { 
-            $resultado = $valor / (136.92381 * 100) *100;
-            return $resultado;
-        } elseif ($original == "mxp") { 
-            $resultado = $valor / 21.3756;
-            return $resultado;
-        } elseif($original == "euro"){
-            return "No se puede convertir a la misma moneda";
-        } else {
-            echo "Este valor no existe";
+        if(!empty($this->valor)){
+            if($original == "us$" ){
+                $resultado = $this->valor / 1.08;
+                return $resultado;
+            } elseif ($original == "ca$") { 
+                $resultado = $this->valor / 1.36;
+                return $resultado;
+            } elseif ($original == "yen") { 
+                $resultado = $this->valor / (136.92381 * 100) *100;
+                return $resultado;
+            } elseif ($original == "mxp") { 
+                $resultado = $this->valor / 21.3756;
+                return $resultado;
+            } elseif($original == "euro"){
+                return "No se puede convertir a la misma moneda";
+            } else {
+                echo "Este valor no existe";
+            }
+        } elseif(empty($this->valor)) {
+            $resultado = false;
         }
+
+
     }
 }
 
@@ -50,6 +55,7 @@ class toYen implements Conversor {
         $this->original = $original;
         $this->valor = $valor;
 
+        if(!empty($this->valor)){
         if($original == "us$" ){
             $resultado = $valor / 0.0078181959 ;
             return $resultado;
@@ -68,15 +74,10 @@ class toYen implements Conversor {
         } else {
             echo "Este valor no existe";
         }
-
-        /*
-        } elseif($original == "euro"){
-            $resultado = $valor;
-            return $resultado;
-        } else {
-            echo "Este valor no existe";
+        }  elseif(empty($this->valor)) {
+            $resultado = false;
         }
-        */
+
     }
 }
 // ==================================================================================================================
@@ -88,11 +89,11 @@ class toUSD implements Conversor {
     //Yen to USD ----- [amount] / YEN 127.86545 * 100 
     //MXN Peso to USD ----- [amount] / MXN 19.77943
 
-    
     public function originalCurrency($original, $valor){
         $this->original = $original;
         $this->valor = $valor;
 
+        if(!empty($this->valor)){
         if($original == "yen" ){
             $resultado = $valor / (127.86545 * 100) * 100;
             return $resultado;
@@ -110,6 +111,9 @@ class toUSD implements Conversor {
         } else {
             echo "Este valor no existe";
         }
+        }  elseif(empty($this->valor)) {
+            $resultado = false;
+        }
     }
 }
 
@@ -125,6 +129,7 @@ class toCAD implements Conversor {
         $this->original = $original;
         $this->valor = $valor;
 
+        if(!empty($this->valor)){
         if($original == "yen" ){
             $resultado = $valor / (101.69776 * 100 ) *100;
             return $resultado;
@@ -142,6 +147,9 @@ class toCAD implements Conversor {
         } else {
             echo "Este valor no existe";
         }
+        }  elseif(empty($this->valor)) {
+            $resultado = false;
+        }
     }
 }
 // ==================================================================================================================
@@ -157,6 +165,7 @@ class toMXN implements Conversor {
         $this->original = $original;
         $this->valor = $valor;
 
+        if(!empty($this->valor)){
         if($original == "yen" ){
             $resultado = $valor / (6.47743  * 100) * 100;
             return $resultado;
@@ -174,6 +183,10 @@ class toMXN implements Conversor {
         } else {
             echo "Este valor no existe";
         }
+        }  elseif(empty($this->valor)) {
+            $resultado = false;
+        }
     }
 }
+
 ?>

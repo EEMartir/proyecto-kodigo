@@ -1,4 +1,5 @@
 <?php
+
 require 'Clases/clase-moneda.php';
 
 $resultado = false;
@@ -21,22 +22,22 @@ if(isset($_POST['moneda1']) &&
     } elseif ($moneda2 == 'yen') {
 
         $convertirAYen = new toYen();
-        $resultado = '¥' . ' ' . $convertirAYen->originalCurrency($_POST['moneda1'], $_POST['valor']);
+        $resultado = '¥' . ' ' . $convertirAYen->originalCurrency($moneda1, $valor);
 
     } elseif ($moneda2 == 'us$') {
 
         $convertir_a_USD = new toUSD();
-        $resultado = 'USD$' . ' ' .  $convertir_a_USD->originalCurrency($_POST['moneda1'], $_POST['valor']);
+        $resultado = 'USD$' . ' ' .  $convertir_a_USD->originalCurrency($moneda1, $valor);
         
     } elseif ($moneda2 == 'ca$') {
 
         $convertir_a_CAD = new toCAD();
-        $resultado = 'CAD$' . ' ' .  $convertir_a_CAD->originalCurrency($_POST['moneda1'], $_POST['valor']);
+        $resultado = 'CAD$' . ' ' .  $convertir_a_CAD->originalCurrency($moneda1, $valor);
         
     } elseif ($moneda2 == 'mxp') {
 
         $convertir_a_MXN = new toMXN();
-        $resultado = 'MXN$' . ' ' .  $convertir_a_MXN->originalCurrency($_POST['moneda1'], $_POST['valor']);
+        $resultado = 'MXN$' . ' ' .  $convertir_a_MXN->originalCurrency($moneda1, $valor);
         
     } else {
         $resultado = "Moneda no valida";

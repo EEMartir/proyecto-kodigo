@@ -23,20 +23,36 @@
     </form>
 
     <?php 
-    if ($_GET['moneda']){
-        require 'Controlador/logica-moneda.php';
-        require 'Secciones/seccion-moneda.php';
-    } elseif($_GET['longitud']){
-        require 'Secciones/seccion-longitud.php';
-    }  elseif($_GET['masa']){
-        require 'Secciones/seccion-masa.php';
-    }  elseif($_GET['volumen']){
-        require 'Secciones/seccion-volumen.php';
-    }  elseif($_GET['datos']){
-        require 'Secciones/seccion-datos.php';
-    }  elseif($_GET['tiempo']){
-        require 'Secciones/seccion-tiempo.php';
+
+    if(isset($_GET['moneda']) ||
+    isset($_GET['longitud']) ||
+    isset($_GET['masa']) ||
+    isset($_GET['volumen']) ||
+    isset($_GET['datos']) ||
+    isset($_GET['tiempo']) 
+    
+    ) {
+        if ($_GET['moneda']){
+            require 'Controlador/logica-moneda.php';
+            require 'Secciones/seccion-moneda.php';
+        } elseif($_GET['longitud']){
+            require 'Controlador/logica-longitud.php';
+            require 'Secciones/seccion-longitud.php';
+        }  elseif($_GET['masa']){
+            require 'Controlador/logica-masa.php';
+            require 'Secciones/seccion-masa.php';
+        }  elseif($_GET['volumen']){
+            require 'Controlador/logica-volumen.php';
+            require 'Secciones/seccion-volumen.php';
+        }  elseif($_GET['datos']){
+            require 'Controlador/logica-datos.php';
+            require 'Secciones/seccion-datos.php';
+        }  elseif($_GET['tiempo']){
+            require 'Controlador/logica-tiempo.php';
+            require 'Secciones/seccion-tiempo.php';
+        }
     }
+
     ?>
 </body>
 </html>

@@ -15,14 +15,16 @@
     </select><br/><br/>
 
     <label for="valor">Valor</label><br/>
-    <input type="text" name="valor"><br/><br/>
+    <input type="text" name="valor" value="<?php echo isset($_POST['valor']) ? $_POST['valor'] : '' ?>" /><br/><br/>
     <nobr></nobr>
 
     <?php
         if(isset($convertir) && empty($valor)) {
-            echo "<small style='color:red'>Instroduce un valor</small></br></br>";
-        } elseif(isset($convertir) && preg_match('/^(?![0.]+$)\d+(\.\d{1,2})?$/', !empty($valor))){
-            echo "<small style='color:red'>Introduce numeros validos</small></br></br>";
+            echo "<small style='color:red'>Por favor, ingrese un valor</small></br></br>";
+            $resultado = false;
+        } elseif(isset($convertir) && !preg_match('/^(?![0.]+$)\d+(\.\d{1,2})?$/', $valor)){
+            echo "<small style='color:red'>Por favor, ingrese números válidos (enteros o decimales positivos)</small></br></br>";
+            $resultado = false;
         }
     ?>
 
@@ -38,6 +40,7 @@
     <input type="submit" value="Convertir" name="convertir">
 
     </form>
+    
 
     <?php
     if($resultado != false) {

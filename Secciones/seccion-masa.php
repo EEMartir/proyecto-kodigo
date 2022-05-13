@@ -5,12 +5,12 @@
 
     <label for="Convertir1">Convertir de: </label><br/>
     <select name="masa1" id="masa1">
-        <option value="kg">Kilogramo</option>
-        <option value="hg">Hectogramo</option>
-        <option value="dag">Decagramo</option>
-        <option value="g">Gramo</option>
-        <option value="dg">Decigramo</option>
         <option value="mg">Miligramo</option>
+        <option value="g">Gramo</option>
+        <option value="kg">Kilogramo</option>
+        <option value="t">Tonelada</option>
+        <option value="lb">Libra</option>
+        <option value="oz">Onza</option>
     </select><br/><br/>
 
     <label for="valor">Valor</label><br/>
@@ -27,12 +27,12 @@
 
     <label for="Convertir2">Convertir a: </label><br/>
     <select name="masa2" id="masa2">
-        <option value="kg">Kilogramo</option>
-        <option value="hg">Hectogramo</option>
-        <option value="dag">Decagramo</option>
+    <option value="mg">Miligramo</option>
         <option value="g">Gramo</option>
-        <option value="dg">Decigramo</option>
-        <option value="mg">Miligramo</option>
+        <option value="kg">Kilogramo</option>
+        <option value="t">Tonelada</option>
+        <option value="lb">Libra</option>
+        <option value="oz">Onza</option>
     </select><br/><br/>
 
     <input type="submit" value="Convertir" name="convertir">

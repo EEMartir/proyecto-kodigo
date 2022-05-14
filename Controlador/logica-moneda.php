@@ -19,10 +19,10 @@ if(isset($_POST['moneda1']) &&
         $convertiraEuro = new toEuro();
         $resultado = '€' . ' ' . $convertiraEuro->originalCurrency($moneda1, $valor);
 
-    } elseif ($moneda2 == 'yen') {
+    } elseif ($moneda2 == 'arg') {
 
-        $convertirAYen = new toYen();
-        $resultado = '¥' . ' ' . $convertirAYen->originalCurrency($moneda1, $valor);
+        $convertirAYen = new toArg();
+        $resultado = 'ARS$' . ' ' . $convertirAYen->originalCurrency($moneda1, $valor);
 
     } elseif ($moneda2 == 'us$') {
 
@@ -39,6 +39,8 @@ if(isset($_POST['moneda1']) &&
         $convertir_a_MXN = new toMXN();
         $resultado = 'MXN$' . ' ' .  $convertir_a_MXN->originalCurrency($moneda1, $valor);
         
+    } elseif(isset($_POST['limpiar'])){
+            header("Location:index.php");
     } else {
         $resultado = "Moneda no valida";
     }

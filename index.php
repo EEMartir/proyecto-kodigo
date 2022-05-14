@@ -26,25 +26,24 @@
     </form>
 
     <?php 
-    if ($_GET['moneda']){
+    if (isset($_GET['moneda'])){
         require 'Controlador/logica-moneda.php';
         require 'Secciones/seccion-moneda.php';
-    } elseif($_GET['longitud']){
+    } elseif(isset($_GET['longitud'])){
         require 'Controlador/logica-longitud.php';
         require 'Secciones/seccion-longitud.php';
-    }  elseif($_GET['masa']){
+    }  elseif(isset($_GET['masa'])){
         require 'Controlador/logica-masa.php';
         require 'Secciones/seccion-masa.php';
-    }  elseif($_GET['volumen']){
+    }  elseif(isset($_GET['volumen'])){
         require 'Secciones/seccion-volumen.php';
-    }  elseif($_GET['datos']){
+    }  elseif(isset($_GET['datos'])){
         require 'Controlador/logica-datos.php';
         require 'Secciones/seccion-datos.php';
-    }  elseif($_GET['tiempo']){
+    }  elseif(isset($_GET['tiempo'])){
         require 'Controlador/logica-tiempo.php';
         require 'Secciones/seccion-tiempo.php';
     }
-
     ?>
 </body>
 </html>

@@ -7,6 +7,56 @@ $options = [
     'mxp' => 'Peso Mexicano'
 ];
 ?>
+<style>
+h1{
+    text-align: center;
+}
+p{
+    text-align: center;
+}
+
+.form-container{
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.form-section{
+    margin-top: 20px;
+    width: 50%;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 28px 11px rgba(99,99,99,0.75);
+-webkit-box-shadow: 0px 0px 28px 11px rgba(99,99,99,0.75);
+-moz-box-shadow: 0px 0px 28px 11px rgba(99,99,99,0.75);
+}
+
+.form-section select{
+    padding: 7px;
+    border-radius: 5px;
+}
+
+input[type="text" i]{
+    padding: 7px;
+    border-radius: 5px;
+}
+.btn {
+  display: inline-block;
+  background: blue;
+  color: #fff;
+  padding: 10px 20px;
+  cursor: pointer;
+  border: 0;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+</style>
 
 <h1>Conversor de Moneda</h1>
 <p>Indica la moneda original, el valor, seguido de la moneda a la que quieres convertir</p>

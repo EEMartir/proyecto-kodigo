@@ -1,7 +1,9 @@
 <h1>Conversor de Masa</h1>
 <p>Indica la masa original, el valor de la masa, seguido del tipo de masa a la que quieres convertir</p>
     
-<form action="" method="POST">
+
+<div class="form-container" >
+<form class="form-section" action="" method="POST">
 
     <label for="Convertir1">Convertir de: </label><br/>
     <select name="masa1" id="masa1">
@@ -35,9 +37,10 @@
         <option value="oz">Onza</option>
     </select><br/><br/>
 
-    <input type="submit" value="Convertir" name="convertir">
+    <input class="btn" type="submit" value="Convertir" name="convertir">
 
     </form>
+    </div>
 
     <?php
     if($resultado != false) {
@@ -46,5 +49,5 @@
     ?>
 
     <form action="">
-    <input type="submit" value="Limpiar" name="limpiar">
+    <input class="btn" type="submit" value="Limpiar" name="limpiar">
     </form>

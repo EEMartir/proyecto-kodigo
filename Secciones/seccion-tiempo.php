@@ -100,5 +100,5 @@ input[type="text" i]{
     ?>
 
     <form action="">
-    <input type="submit" value="Limpiar" name="limpiar">
+    <input class="btn" type="submit" value="Limpiar" name="limpiar">
     </form>

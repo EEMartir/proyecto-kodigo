@@ -25,6 +25,28 @@ p{
 -moz-box-shadow: 0px 0px 28px 11px rgba(99,99,99,0.75);
 }
 
+.form-section select{
+    padding: 7px;
+    border-radius: 5px;
+}
+
+input[type="text" i]{
+    padding: 7px;
+    border-radius: 5px;
+}
+.btn {
+  display: inline-block;
+  background: blue;
+  color: #fff;
+  padding: 10px 20px;
+  cursor: pointer;
+  border: 0;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
 </style>
 
 <h1>Conversor de Datos</h1>
@@ -65,7 +87,7 @@ p{
         <option value="">Petabyte</option>
     </select><br/><br/>
 
-    <input type="submit" value="Convertir" name="convertir">
+    <input class="btn" type="submit" value="Convertir" name="convertir">
 
     </form>
     </div>
@@ -77,5 +99,5 @@ p{
     ?>
 
     <form action="">
-    <input type="submit" value="Limpiar" name="limpiar">
+    <input class="btn" type="submit" value="Limpiar" name="limpiar">
     </form>

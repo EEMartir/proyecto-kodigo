@@ -6,32 +6,32 @@ interface Conversor {
 
 class toMiligramo implements Conversor {
 
-    //Miligramo to Gramo ----- [amount] / 1000  
-    //Miligramo to Kilogramo ----- [amount] /1E+6
-    //Miligramo to Tonelada----- [amount] / 1E+9 
-    //Miligramo to Libra ----- [amount] / 453592
-    //Miligramo to Onza ----- [amount] / 28350
+    //Miligramo to Gramo(G) ----- [amount] / 1000  
+    //Miligramo to Kilogramo(Kg) ----- [amount] /1E+6
+    //Miligramo to Tonelada(T)----- [amount] / 1E+9 
+    //Miligramo to Libra(Lb) ----- [amount] / 453592
+    //Miligramo to Onza(Oz) ----- [amount] / 28350
 
     public function originalMass($original, $valor){
         $this->original = $original;
         $this->valor = $valor;
 
-        if($original == "Gramo" ){
+        if($original == "G" ){
             $resultado = $valor / 1000;
             return $resultado;
-        } elseif ($original == "Kilogramo") { 
+        } elseif ($original == "Kg") { 
             $resultado = $valor / 1e+6;
             return $resultado;
-        } elseif ($original == "Tonelada") { 
+        } elseif ($original == "T") { 
             $resultado = $valor / 1e+9;
             return $resultado;
-        } elseif ($original == "Libra") { 
+        } elseif ($original == "Lb") { 
             $resultado = $valor / 453592;
             return $resultado;
-        } elseif($original == "Onza"){
+        } elseif($original == "Oz"){
             $resultado = $valor / 28350;
             return $resultado;
-        } elseif($original == "Miligramo"){
+        } elseif($original == "Mg"){
             return "No contiene suficiente peso";
         } else {
             echo "Este valor no existe";
@@ -41,32 +41,32 @@ class toMiligramo implements Conversor {
 
 class toGramo implements Conversor {
 
-    //Gramo to Miligramo ----- [amount] * 1000  
-    //Gramo to Kilogramo ----- [amount] / 1000
-    //Gramo to Tonelada----- [amount] / 1E+6 
-    //Gramo to Libra ----- [amount] / 454
-    //Gramo to Onza ----- [amount] / 28.35
+    //Gramo to Miligramo(Mg) ----- [amount] * 1000  
+    //Gramo to Kilogramo(Kg) ----- [amount] / 1000
+    //Gramo to Tonelada(T)----- [amount] / 1E+6 
+    //Gramo to Libra(Lb) ----- [amount] / 454
+    //Gramo to Onza(Oz) ----- [amount] / 28.35
 
     public function originalMass($original, $valor){
         $this->original = $original;
         $this->valor = $valor;
 
-        if($original == "miligramo" ){
+        if($original == "Mg" ){
             $resultado = $valor * 1000;
             return $resultado;
-        } elseif ($original == "kilogramo") { 
+        } elseif ($original == "Kg") { 
             $resultado = $valor / 1000;
             return $resultado;
-        } elseif ($original == "tonelada") { 
+        } elseif ($original == "T") { 
             $resultado = $valor / 1e+6;
             return $resultado;
-        } elseif ($original == "libra") { 
+        } elseif ($original == "Lb") { 
             $resultado = $valor / 454;
             return $resultado;
-        } elseif($original == "onza"){
+        } elseif($original == "Oz"){
             $resultado = $valor / 28.35;
             return $resultado;
-        } elseif($original == "Gramo"){
+        } elseif($original == "G"){
             return "No contiene suficiente peso";
         } else {
             echo "Este valor no existe";
@@ -76,32 +76,32 @@ class toGramo implements Conversor {
 
 class toKilogramo implements Conversor {
 
-    //Kilogramo to Miligramo ----- [amount] * 1E+6  
-    //Kilogramo to Gramo ----- [amount] * 1000
-    //Kilogramo to Tonelada----- [amount] / 1000 
-    //Kilogramo to Libra ----- [amount] * 2.205
-    //Kilogramo to Onza ----- [amount] * 35.274
+    //Kilogramo to Miligramo(Mg) ----- [amount] * 1E+6  
+    //Kilogramo to Gramo(G) ----- [amount] * 1000
+    //Kilogramo to Tonelada(T)----- [amount] / 1000 
+    //Kilogramo to Libra(Lb) ----- [amount] * 2.205
+    //Kilogramo to Onza(Oz) ----- [amount] * 35.274
 
     public function originalMass($original, $valor){
         $this->original = $original;
         $this->valor = $valor;
 
-        if($original == "miligramo" ){
+        if($original == "Mg" ){
             $resultado = $valor * 1e+6;
             return $resultado;
-        } elseif ($original == "gramo") { 
+        } elseif ($original == "G") { 
             $resultado = $valor * 1000;
             return $resultado;
-        } elseif ($original == "tonelada") { 
+        } elseif ($original == "T") { 
             $resultado = $valor / 1000;
             return $resultado;
-        } elseif ($original == "libra") { 
+        } elseif ($original == "Lb") { 
             $resultado = $valor * 2.205;
             return $resultado;
-        } elseif($original == "onza"){
+        } elseif($original == "Oz"){
             $resultado = $valor * 35.274;
             return $resultado;
-        } elseif($original == "Kilogramo"){
+        } elseif($original == "Kg"){
             return "No contiene suficiente peso";
         } else {
             echo "Este valor no existe";
@@ -111,32 +111,32 @@ class toKilogramo implements Conversor {
 
 class toTonelada implements Conversor {
 
-    //Tonelada to Miligramo ----- [amount] * 1E+9  
-    //Tonelada to Gramo ----- [amount] * 1E+6
-    //Tonelada to Kilogramo----- [amount] * 1000 
-    //Tonelada to Libra ----- [amount] * 2205
-    //Tonelada to Onza ----- [amount] * 35274
+    //Tonelada to Miligramo(Mg) ----- [amount] * 1E+9  
+    //Tonelada to Gramo(G) ----- [amount] * 1E+6
+    //Tonelada to Kilogramo(Kg)----- [amount] * 1000 
+    //Tonelada to Libra(Lb) ----- [amount] * 2205
+    //Tonelada to Onza(Oz) ----- [amount] * 35274
 
     public function originalMass($original, $valor){
         $this->original = $original;
         $this->valor = $valor;
 
-        if($original == "miligramo" ){
+        if($original == "Mg" ){
             $resultado = $valor * 1e+9;
             return $resultado;
-        } elseif ($original == "gramo") { 
+        } elseif ($original == "G") { 
             $resultado = $valor * 1e+6;
             return $resultado;
-        } elseif ($original == "kilogramo") { 
+        } elseif ($original == "Kg") { 
             $resultado = $valor * 1000;
             return $resultado;
-        } elseif ($original == "libra") { 
+        } elseif ($original == "Lb") { 
             $resultado = $valor * 2205;
             return $resultado;
-        } elseif($original == "onza"){
+        } elseif($original == "Oz"){
             $resultado = $valor * 35274;
             return $resultado;
-        } elseif($original == "Tonelada"){
+        } elseif($original == "T"){
             return "No contiene suficiente peso";
         } else {
             echo "Este valor no existe";
@@ -146,32 +146,32 @@ class toTonelada implements Conversor {
 
 class toLibra implements Conversor {
 
-    //Libra to Miligramo ----- [amount] * 453592  
-    //Libra to Gramo ----- [amount] * 454
-    //Libra to Kilogramo----- [amount] / 2.205 
-    //Libra to Tonelada ----- [amount] / 2205
-    //Libra to Onza ----- [amount] * 16
+    //Libra to Miligramo(Mg) ----- [amount] * 453592  
+    //Libra to Gramo(G) ----- [amount] * 454
+    //Libra to Kilogramo(Kg) ----- [amount] / 2.205 
+    //Libra to Tonelada(T) ----- [amount] / 2205
+    //Libra to Onza(Oz) ----- [amount] * 16
 
     public function originalMass($original, $valor){
         $this->original = $original;
         $this->valor = $valor;
 
-        if($original == "miligramo" ){
+        if($original == "Mg" ){
             $resultado = $valor * 453592;
             return $resultado;
-        } elseif ($original == "gramo") { 
+        } elseif ($original == "G") { 
             $resultado = $valor * 454;
             return $resultado;
-        } elseif ($original == "kilogramo") { 
+        } elseif ($original == "Kg") { 
             $resultado = $valor / 2.205;
             return $resultado;
-        } elseif ($original == "tonelada") { 
+        } elseif ($original == "T") { 
             $resultado = $valor / 2205;
             return $resultado;
-        } elseif($original == "onza"){
+        } elseif($original == "Oz"){
             $resultado = $valor * 16;
             return $resultado;
-        } elseif($original == "Libra"){
+        } elseif($original == "Lb"){
             return "No contiene suficiente peso";
         } else {
             echo "Este valor no existe";
@@ -181,32 +181,32 @@ class toLibra implements Conversor {
 
 class toOnza implements Conversor {
 
-    //Onza to Miligramo ----- [amount] * 28350  
-    //Onza to Gramo ----- [amount] * 28.35
-    //Onza to Kilogramo----- [amount] / 35.274 
-    //Onza to Libra ----- [amount] / 16
-    //Onza to Tonelada ----- [amount]  35274
+    //Onza to Miligramo(Mg) ----- [amount] * 28350  
+    //Onza to Gramo(G) ----- [amount] * 28.35
+    //Onza to Kilogramo(Kg) ----- [amount] / 35.274 
+    //Onza to Libra(Lb) ----- [amount] / 16
+    //Onza to Tonelada(T) ----- [amount]  35274
 
     public function originalMass($original, $valor){
         $this->original = $original;
         $this->valor = $valor;
 
-        if($original == "miligramo" ){
+        if($original == "Mg" ){
             $resultado = $valor * 28350;
             return $resultado;
-        } elseif ($original == "gramo") { 
+        } elseif ($original == "G") { 
             $resultado = $valor * 28.35;
             return $resultado;
-        } elseif ($original == "kilogramo") { 
+        } elseif ($original == "Kg") { 
             $resultado = $valor / 35.274;
             return $resultado;
-        } elseif ($original == "tonelada") { 
+        } elseif ($original == "T") { 
             $resultado = $valor / 35274;
             return $resultado;
-        } elseif($original == "libra"){
+        } elseif($original == "Lb"){
             $resultado = $valor / 16;
             return $resultado;
-        } elseif($original == "Onza"){
+        } elseif($original == "Oz"){
             return "No contiene suficiente peso";
         } else {
             echo "Este valor no existe";

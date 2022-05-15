@@ -66,38 +66,37 @@ input[type="text" i]{
 <form class="form-section" action="" method="POST">
 
     <label for="Convertir1">Convertir de: </label><br/>
-    <select name="datos1" id="datos1">
+    <select name="dato1" id="dato1">
     <?php foreach ($options as $key => $label) { ?>
-            <option value="<?= $key?>"<?=(isset($_POST['datos1']) && $_POST['datos1'] == $key) ? 'selected= "selected"' : '' ?>><?= $label ?></option>
+            <option value="<?= $key?>"<?=(isset($_POST['dato1']) && $_POST['dato1'] == $key) ? 'selected= "selected"' : '' ?>><?= $label ?></option>
 <?php } ?>
     </select><br/><br/>
 
     <label for="valor">Valor</label><br/>
-    <input type="text" name="valor"><br/><br/>
+    <input type="text" name="valor" value="<?php echo isset($_POST['valor']) ? $_POST['valor'] : '' ?>" /><br/><br/>
     <nobr></nobr>
 
     <?php
         if(isset($convertir) && empty($valor)) {
-            echo "<small style='color:red'>Instroduce un valor</small></br></br>";
+            echo "<small style='color:red'>Por favor, ingrese un valor</small></br></br>";
             $resultado = false;
         } elseif(isset($convertir) && !preg_match('/^(?![0.]+$)\d+(\.\d{1,2})?$/', $valor)){
-            echo "<small style='color:red'>Introduce numeros validos</small></br></br>";
+            echo "<small style='color:red'>Por favor, ingrese números válidos (enteros o decimales positivos)</small></br></br>";
             $resultado = false;
         }
     ?>
 
     <label for="Convertir2">Convertir a: </label><br/>
-    <select name="datos2" id="datos2">
-    <option value="">Byte</option>
+    <select name="dato2" id="dato2">
     <?php foreach ($options as $key => $label) { ?>
-            <option value="<?= $key?>"<?=(isset($_POST['datos2']) && $_POST['datos2'] == $key) ? 'selected= "selected"' : '' ?>><?= $label ?></option>
-<?php } ?>
+            <option value="<?= $key?>"<?=(isset($_POST['dato2']) && $_POST['dato2'] == $key) ? 'selected= "selected"' : '' ?>><?= $label ?></option>
+    <?php } ?>
     </select><br/><br/>
 
     <input class="btn" type="submit" value="Convertir" name="convertir">
 
     </form>
-    </div>
+    </div> 
 
     <?php
     if($resultado != false) {
@@ -106,5 +105,5 @@ input[type="text" i]{
     ?>
 
     <form action="">
-    <p><input class="btn" type="submit" value="Limpiar" name="limpiar"></p>
+    <p><input class="btn" type="submit" value="Limpiar Pantalla" name="limpiar"></p>
     </form>

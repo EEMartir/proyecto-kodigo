@@ -1,17 +1,20 @@
 <?php
 
-interface Conversor { 
+// referencia para las medidas: https://www.techspot.com/news/68482-quickly-convert-between-storage-size-units-kb-mb.html
+// conversor en linea para test: https://www.calculatorsoup.com/calculators/conversions/computerstorage.php#:~:text=Here%2C%201%20kilobyte%20%3D%201024%20bytes,gigajoule%20%3D%201000%20megajoules%2C%20etc.
+
+interface ConversorDatos { 
     public function originalData($original, $valor);
     
 }
 
-class toByte implements Conversor {
+class toByte implements ConversorDatos {
     
-    //Byte to Kilobyte ----- [amount] / 1000 
-    //Byte to Megabyte ----- [amount] / 1E+6
-    //Byte to Gigabyte ----- [amount] / 1E+9
-    //Byte to Terabyte ----- [amount] / 1E+12
-    //Byte to Petabyte ----- [amount] / 1E+15
+    // Kilobyte to Byte ----- [amount] / 1000 
+    // Megabyte to Byte ----- [amount] / 1E+6
+    // Gigabyte to Byte ----- [amount] / 1E+9
+    // Terabyte to Byte ----- [amount] / 1E+12
+    // Petabyte to Byte ----- [amount] / 1E+15
 
     public function originalData($original, $valor){
         $this->original = $original;
@@ -19,22 +22,22 @@ class toByte implements Conversor {
         
         if(!empty($this->valor)){
             if($original == "KB" ){
-                $resultado = $this->valor / 1000;
+                $resultado = $this->valor * 1024;
                 return $resultado;
             } elseif ($original == "MB") { 
-                $resultado = $this->valor / 1E+6;
+                $resultado = ($this->valor * 1024) * 1024;
                 return $resultado;
             } elseif ($original == "GB") { 
-                $resultado = $this->valor / 1E+9;
+                $resultado = (($this->valor * 1024) * 1024) * 1024;
                 return $resultado;
             } elseif ($original == "TB") { 
-                $resultado = $this->valor / 1E+12;
+                $resultado = ((($this->valor * 1024) * 1024) * 1024) * 1024;
                 return $resultado;
             } elseif ($original == "PB") { 
-                $resultado = $this->valor / 1E+15;
+                $resultado = (((($this->valor * 1024) * 1024) * 1024) * 1024) * 1024;
                 return $resultado;
-            } elseif($original == "Byte"){
-                return "No contiene suficiente datos";
+            } elseif($original == "B"){
+                return $resultado =  "Misma unidad de datos";
             } else {
                 echo "Este valor no existe";
             }
@@ -47,13 +50,13 @@ class toByte implements Conversor {
 
 #======================================================================================================================
 
-class toKilobyte implements Conversor {
+class toKilobyte implements ConversorDatos {
     
-    //Kilobyte to Byte ----- [amount] * 1000 
-    //Kilobyte to Megabyte ----- [amount] / 1000
-    //Kilobyte to Gigabyte ----- [amount] / 1E+6
-    //Kilobyte to Terabyte ----- [amount] / 1E+9
-    //Kilobyte to Petabyte ----- [amount] / 1E+12
+    //Byte to Kilobyte ----- [amount] * 1000 
+    //Megabyte to Kilobyte  ----- [amount] / 1000
+    //Gigabyte to Kilobyte  ----- [amount] / 1E+6
+    //Terabyte to Kilobyte  ----- [amount] / 1E+9
+    //Petabyte to Kilobyte  ----- [amount] / 1E+12
 
     public function originalData($original, $valor){
         $this->original = $original;
@@ -61,22 +64,22 @@ class toKilobyte implements Conversor {
 
         if(!empty($this->valor)){
             if($original == "B" ){
-                $resultado = $this->valor * 1000;
+                $resultado = $this->valor / 1024;
                 return $resultado;
             } elseif ($original == "MB") { 
-                $resultado = $this->valor / 1000;
+                $resultado = $this->valor * 1024;
                 return $resultado;
             } elseif ($original == "GB") { 
-                $resultado = $this->valor / 1E+6;
+                $resultado = ($this->valor * 1024) * 1024;
                 return $resultado;
             } elseif ($original == "TB") { 
-                $resultado = $this->valor / 1E+9;
+                $resultado = (($this->valor * 1024) * 1024) * 1024;
                 return $resultado;
             } elseif ($original == "PB") { 
-                $resultado = $this->valor / 1E+12;
+                $resultado = ((($this->valor * 1024) * 1024) * 1024) * 1024;
                 return $resultado;
-            } elseif($original == "Kilobyte"){
-                return "No contiene suficiente datos";
+            } elseif($original == "KB"){
+                return $resultado =  "Misma unidad de datos";
             } else {
                 echo "Este valor no existe";
             }
@@ -88,13 +91,13 @@ class toKilobyte implements Conversor {
 
 #===================================================================================================================
 
-class toMegabyte implements Conversor {
+class toMegabyte implements ConversorDatos {
     
-    //Megabyte to Byte ----- [amount] * 1E+6  
-    //Megabyte to Kilobyte ----- [amount] * 1000 
-    //Megabyte to Gigabyte----- [amount] / 1000
-    //Megabyte to Terabyte ----- [amount] / 1E+6
-    //Megabyte to Petabyte ----- [amount] / 1E+9
+    // Byte to Megabyte ----- [amount] * 1E+6  
+    // Kilobyte to Megabyte  ----- [amount] * 1000 
+    // Gigabyte to Megabyte ----- [amount] / 1000
+    // Terabyte to Megabyte  ----- [amount] / 1E+6
+    // Petabyte to Megabyte  ----- [amount] / 1E+9
 
     public function originalData($original, $valor){
         $this->original = $original;
@@ -102,22 +105,22 @@ class toMegabyte implements Conversor {
 
         if(!empty($this->valor)){
             if($original == "B" ){
-                $resultado = $this->valor * 1e+6;
+                $resultado = ($this->valor / 1024) / 1024;
                 return $resultado;
             } elseif ($original == "KB") { 
-                $resultado = $this->valor * 1000;
+                $resultado = $this->valor / 1024;
                 return $resultado;
             } elseif ($original == "GB") { 
-                $resultado = $this->valor / 1000;
+                $resultado = $this->valor * 1024;
                 return $resultado;
             } elseif ($original == "TB") { 
-                $resultado = $this->valor / 1E+6;
+                $resultado = ($this->valor * 1024) * 1024;
                 return $resultado;
             } elseif ($original == "PB") { 
-                $resultado = $this->valor / 1E+9;
+                $resultado = (($this->valor * 1024) * 1024) * 1024;
                 return $resultado;
-            } elseif($original == "MegaByte"){
-                return "No contiene suficiente datos";
+            } elseif($original == "MB"){
+                return $resultado =  "Misma unidad de datos";
             } else {
                 echo "Este valor no existe";
             }
@@ -129,13 +132,13 @@ class toMegabyte implements Conversor {
 
 //=================================================================================================================================
 
-class toGigabyte implements Conversor {
+class toGigabyte implements ConversorDatos {
     
-    //Gigabyte to Byte ----- [amount] * 1E+9  
-    //Gigabyte to Kilobyte ----- [amount] * 1e+6 
-    //Gigabyte to Megabyte----- [amount] * 1000
-    //Gigabyte to Terabyte ----- [amount] / 1000
-    //Gigabyte to Petabyte ----- [amount] / 1E+6
+    // Byte to Gigabyte ----- [amount] * 1E+9  
+    // Kilobyte  to Gigabyte ----- [amount] * 1e+6 
+    // Megabyte- to Gigabyte ---- [amount] * 1000
+    // Terabyte to Gigabyte ----- [amount] / 1000
+    // Petabyte to Gigabyte ----- [amount] / 1E+6
 
     public function originalData($original, $valor){
         $this->original = $original;
@@ -143,22 +146,22 @@ class toGigabyte implements Conversor {
 
         if(!empty($this->valor)){
             if($original == "B" ){
-                $resultado = $this->valor * 1e+9;
+                $resultado = ((($this->valor / 1024) / 1024) / 1024);
                 return $resultado;
             } elseif ($original == "KB") { 
-                $resultado = $this->valor * 1E+6;
+                $resultado = (($this->valor / 1024) / 1024);
                 return $resultado;
             } elseif ($original == "MB") { 
-                $resultado = $this->valor * 1000;
+                $resultado = $this->valor / 1024;
                 return $resultado;
             } elseif ($original == "TB") { 
-                $resultado = $this->valor / 1000;
+                $resultado = $this->valor * 1024;
                 return $resultado;
             } elseif ($original == "PB") { 
-                $resultado = $this->valor / 1E+6;
+                $resultado = ($this->valor * 1024) * 1024;
                 return $resultado;
-            } elseif($original == "GigaByte"){
-                return "No contiene suficiente datos";
+            } elseif($original == "GB"){
+                return $resultado =  "Misma unidad de datos";
             } else {
                 echo "Este valor no existe";
             }
@@ -170,13 +173,13 @@ class toGigabyte implements Conversor {
 
 //==============================================================================================================
 
-class toTerabyte implements Conversor {
+class toTerabyte implements ConversorDatos {
     
-    //Terabyte to Byte ----- [amount] / 1,000,000 
-    //Terabyte to Kilobyte ----- [amount] / 1000
-    //Terabyte to Megabyte----- [amount] / 0.001
-    //Terabyte to Gigabyte ----- [amount] / 0.000001
-    //Terabyte to Petabyte ----- [amount] / 0.000000001
+    // Byte  to Terabyte ----- [amount] / 1,000,000 
+    // Kilobyte to Terabyte ----- [amount] / 1000
+    // Megabyte to Terabyte----- [amount] / 0.001
+    // Gigabyte to Terabyte ----- [amount] / 0.000001
+    // Petabyte to Terabyte ----- [amount] / 0.000000001
 
     public function originalData($original, $valor){
         $this->original = $original;
@@ -184,22 +187,22 @@ class toTerabyte implements Conversor {
 
         if(!empty($this->valor)){
             if($original == "B" ){
-                $resultado = $this->valor * 1E+12;
+                $resultado = (((($this->valor / 1024) / 1024) / 1024) / 1024);
                 return $resultado;
             } elseif ($original == "KB") { 
-                $resultado = $this->valor * 1E+9;
+                $resultado = ((($this->valor / 1024) / 1024) / 1024);
                 return $resultado;
             } elseif ($original == "MB") { 
-                $resultado = $this->valor * 1E+6;
+                $resultado = (($this->valor / 1024) / 1024);
                 return $resultado;
             } elseif ($original == "GB") { 
-                $resultado = $this->valor * 1000;
+                $resultado = $this->valor / 1024;
                 return $resultado;
             } elseif ($original == "PB") { 
-            $resultado = $this->valor / 1000;
+            $resultado = $this->valor * 1024;
                 return $resultado;
-            } elseif($original == "TeraByte"){
-                return "No contiene suficiente datos";
+            } elseif($original == "TB"){
+                return $resultado =  "Misma unidad de datos";
             } else {
                 echo "Este valor no existe";
             }
@@ -211,13 +214,13 @@ class toTerabyte implements Conversor {
 
 //==================================================================================================================================
 
-class toPetabyte implements Conversor {
+class toPetabyte implements ConversorDatos {
     
-    //Petabyte to Byte ----- [amount] * 1E+15  
-    //Petabyte to Kilobyte ----- [amount] * 1E+12
-    //Petabyte to Megabyte----- [amount] * 1E+9 
-    //Petabyte to Gigabyte ----- [amount] * 1E+6
-    //Petabyte to Terabyte ----- [amount] * 1000
+    // Byte  to Petabyte ----- [amount] * 1E+15  
+    // Kilobyte to Petabyte  ----- [amount] * 1E+12
+    // Megabyte to Petabyte ----- [amount] * 1E+9 
+    // Gigabyte to Petabyte  ----- [amount] * 1E+6
+    // Terabyte to Petabyte  ----- [amount] * 1000
 
     public function originalData($original, $valor){
         $this->original = $original;
@@ -225,22 +228,22 @@ class toPetabyte implements Conversor {
 
         if(!empty($this->valor)){
             if($original == "B" ){
-                $resultado = $this->valor * 1E+15;
+                $resultado = ((((($this->valor / 1024) / 1024) / 1024) / 1024) / 1024);
                 return $resultado;
             } elseif ($original == "KB") { 
-                $resultado = $this->valor * 1E+12;
+                $resultado = (((($this->valor / 1024) / 1024) / 1024) / 1024);
                 return $resultado;
             } elseif ($original == "MB") { 
-                $resultado = $this->valor * 1E+9;
+                $resultado = ((($this->valor / 1024) / 1024) / 1024);
                 return $resultado;
             } elseif ($original == "GB") { 
-                $resultado = $this->valor * 1E+6;
+                $resultado = (($this->valor / 1024) / 1024);
                 return $resultado;
             } elseif ($original == "TB") { 
-                $resultado = $this->valor * 1000;
+                $resultado = ($this->valor / 1024);
                 return $resultado;
-            } elseif($original == "PetaByte"){
-                return "No contiene suficiente datos";
+            } elseif($original == "PB"){
+                return $resultado =  "Misma unidad de datos";
             } else {
                 echo "Este valor no existe";
             }

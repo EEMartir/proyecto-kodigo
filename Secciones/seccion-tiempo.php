@@ -80,10 +80,10 @@ $options = [
 
     <?php
         if(isset($convertir) && empty($valor)) {
-            echo "<small style='color:red'>Instroduce un valor</small></br></br>";
+            echo "<small style='color:red'>Por favor, ingrese un valor</small></br></br>";
             $resultado = false;
         } elseif(isset($convertir) && !preg_match('/^(?![0.]+$)\d+(\.\d{1,2})?$/', $valor)){
-            echo "<small style='color:red'>Introduce numeros validos</small></br></br>";
+            echo "<small style='color:red'>Por favor, ingrese números válidos (enteros o decimales positivos)</small></br></br>";
             $resultado = false;
         }
     ?>
@@ -108,5 +108,5 @@ $options = [
     ?>
 
     <form action="">
-    <p><input class="btn" type="submit" value="Limpiar" name="limpiar"></p>
+    <p><input class="btn" type="submit" value="Limpiar Pantalla" name="limpiar"></p>
     </form>

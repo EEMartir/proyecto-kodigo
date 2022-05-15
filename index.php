@@ -20,30 +20,36 @@
     <input class="btn" type="submit" value="Conversor de Moneda" name="moneda">
     <input class="btn" type="submit" value="Conversor de Longitud" name="longitud">
     <input class="btn" type="submit" value="Conversor de Masa" name="masa">
-    <input class="btn" type="submit" value="Conversor de Volumen" name="volumen">
     <input class="btn" type="submit" value="Conversor de Datos" name="datos">
     <input class="btn" type="submit" value="Conversor de Tiempo" name="tiempo">
     </form>
 
     <?php 
     if (isset($_GET['moneda'])){
+
         require 'Controlador/logica-moneda.php';
         require 'Secciones/seccion-moneda.php';
+
     } elseif(isset($_GET['longitud'])){
+
         require 'Controlador/logica-longitud.php';
         require 'Secciones/seccion-longitud.php';
+
     }  elseif(isset($_GET['masa'])){
+
         require 'Controlador/logica-masa.php';
         require 'Secciones/seccion-masa.php';
-    }  elseif(isset($_GET['volumen'])){
-        require 'Secciones/seccion-volumen.php';
+
     }  elseif(isset($_GET['datos'])){
+
         require 'Controlador/logica-datos.php';
         require 'Secciones/seccion-datos.php';
+
     }  elseif(isset($_GET['tiempo'])){
         require 'Controlador/logica-tiempo.php';
         require 'Secciones/seccion-tiempo.php';
     }
+
     ?>
 <footer>
     <p>&copy; 2020 - <?php echo date('Y'); ?> </p>

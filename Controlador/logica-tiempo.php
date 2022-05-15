@@ -14,10 +14,8 @@ if(isset($_POST['tiempo1']) &&
     $convertir = $_POST['convertir'];
 
     if($tiempo2 == 'seg') {
-
       $convertToSeconds = new ToSeconds();
-      $resultado = $convertToSeconds->originalTiempo($_POST['tiempo1'], $_POST['valor']);
-
+      $resultado = 'Segundos: ' .  $convertToSeconds->originalTiempo($_POST['tiempo1'], $_POST['valor']);
     } elseif ($tiempo2 == 'min') {
       $convertToMinutes = new ToMinutes();
       $resultado = 'Minutos: ' . $convertToMinutes->originalTiempo($_POST['tiempo1'], $_POST['valor']);

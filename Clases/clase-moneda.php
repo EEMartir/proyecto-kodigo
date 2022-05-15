@@ -31,7 +31,7 @@ class toEuro implements ConversorMoneda {
                 $resultado = $this->valor / 21.3756;
                 return $resultado;
             } elseif($original == "euro"){
-                return "No se puede convertir a la misma moneda";
+                return $resultado =  "Misma unidad de moneda";
             } else {
                 echo "Este valor no existe";
             }
@@ -70,7 +70,7 @@ class ToArg implements ConversorMoneda {
             $resultado = $valor / 0.17122664;
             return $resultado;
         } elseif ($original == "arg"){
-            return "No se puede convertir a la misma moneda";
+            return $resultado =  "Misma unidad de moneda";
         } else {
             echo "Este valor no existe";
         }
@@ -107,7 +107,7 @@ class toUSD implements ConversorMoneda {
             $resultado = $valor / 19.77943;
             return $resultado;
         } elseif ($original == "us$"){
-            return "No se puede convertir a la misma moneda";
+            return $resultado =  "Misma unidad de moneda";
         } else {
             echo "Este valor no existe";
         }
@@ -143,7 +143,7 @@ class toCAD implements ConversorMoneda {
             $resultado = $valor / 15.718696;
             return $resultado;
         } elseif ($original == "ca$"){
-            return "No se puede convertir a la misma moneda";
+            return $resultado =  "Misma unidad de moneda";
         } else {
             echo "Este valor no existe";
         }
@@ -179,7 +179,7 @@ class toMXN implements ConversorMoneda {
             $resultado = $valor / 0.06361126;
             return $resultado;
         } elseif($original == "mxp"){
-            return "No se puede convertir a la misma moneda";
+            return $resultado =  "Misma unidad de moneda";
         } else {
             echo "Este valor no existe";
         }
@@ -188,46 +188,5 @@ class toMXN implements ConversorMoneda {
         }
     }
 }
-
-
-
-
-/*
-
-class toMXN implements ConversorMoneda {
-
-    //USD to MXN ----- [amount] / USD 0.050559712
-    //Euro to MXN ----- [amount] / EUR 0.046923072
-    //Yen to MXN ----- [amount] / YEN (6.47743  * 100) * 100 
-    //CAD to MXN ----- [amount] / CAD 0.06361126
-    
-    public function originalCurrency($original, $valor){
-        $this->original = $original;
-        $this->valor = $valor;
-
-        if(!empty($this->valor)){
-        if($original == "yen" ){
-            $resultado = $valor / (6.47743  * 100) * 100;
-            return $resultado;
-        } elseif ($original == "us$") { 
-            $resultado = $valor / 0.050559712;
-            return $resultado;
-        } elseif ($original == "euro") { 
-            $resultado = $valor / 0.046923072 ;
-            return $resultado;
-        } elseif ($original == "ca$") { 
-            $resultado = $valor / 0.06361126;
-            return $resultado;
-        } elseif($original == "mxp"){
-            return "No se puede convertir a la misma moneda";
-        } else {
-            echo "Este valor no existe";
-        }
-        }  elseif(empty($this->valor)) {
-            $resultado = false;
-        }
-    }
-}
-*/
 
 ?>

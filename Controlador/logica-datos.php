@@ -14,35 +14,35 @@ if(isset($_POST['dato1']) &&
     $valor = $_POST['valor'];
     $convertir = $_POST['convertir'];
     
-    if($dato2 == 'Byte') { 
+    if($dato2 == 'B') { 
 
         $convertirByte = new toByte();
-        $resultado = 'B' . ' ' . $convertirByte->originalData($moneda1, $valor);
+        $resultado = 'Bytes' . ' ' . $convertirByte->originalData($dato1, $valor);
 
-    } elseif ($dato2 == 'KiloByte') {
+    } elseif ($dato2 == 'KB') {
 
        $convertirKiloByte = new toKilobyte();
-       $resultado = 'KB' . ' ' . $convertirKiloByte->originalData($_POST['dato1'], $_POST['valor']);
+       $resultado = 'KB' . ' ' . $convertirKiloByte->originalData($dato1, $valor);
 
-    } elseif ($dato2 == 'MegaByte') {
+    } elseif ($dato2 == 'MB') {
 
         $convertirMegaByte = new toMegabyte();
-        $resultado = 'MB' . ' ' .  $convertirMegaByte->originalData($_POST['dato1'], $_POST['valor']);
+        $resultado = 'MB' . ' ' .  $convertirMegaByte->originalData($dato1, $valor);
         
-    }elseif ($dato2 == 'GigaByte') {
+    }elseif ($dato2 == 'GB') {
 
         $convertirGigaByte = new toGigabyte();
-        $resultado = 'GB' . ' ' .  $convertirGigaByte->originalData($_POST['dato1'], $_POST['valor']);
+        $resultado = 'GB' . ' ' .  $convertirGigaByte->originalData($dato1, $valor);
         
-    } elseif ($dato2 == 'TeraByte') {
+    } elseif ($dato2 == 'TB') {
 
         $convertirTeraByte = new toTerabyte();
-        $resultado = 'TB' . ' ' .  $convertirTeraByte->originalData($_POST['dato1'], $_POST['valor']);
+        $resultado = 'TB' . ' ' .  $convertirTeraByte->originalData($dato1, $valor);
     
-    } elseif ($moneda2 == 'PetaByte') {
+    } elseif ($dato2 == 'PB') {
 
         $convertirPetaByte = new toPetabyte();
-        $resultado = 'PB' . ' ' .  $convertirPetaByte->originalData($_POST['dato1'], $_POST['valor']);
+        $resultado = 'PB' . ' ' .  $convertirPetaByte->originalData($dato1, $valor);
        
     }elseif(isset($_POST['limpiar'])){
         header("Location:index.php");
@@ -50,6 +50,5 @@ if(isset($_POST['dato1']) &&
         $resultado = "Dato no Valido";
     }
 }
-  // Considera eliminar la opcion de convertir de monedas iguales----
 
 ?>

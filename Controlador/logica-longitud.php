@@ -16,19 +16,19 @@ if(isset($_POST['longitud1']) &&
     if($longitud2 == 'mm') {
 
       $convertToMillimeters = new ToMillimeters();
-      $resultado = $convertToMillimeters->originalLongitud($_POST['longitud1'], $_POST['valor']);
+      $resultado = 'mm' . ' ' .  $convertToMillimeters->originalLongitud($_POST['longitud1'], $_POST['valor']);
     } elseif ($longitud2 == 'cm') {
       $convertToCentimeters = new ToCentimeters();
-      $resultado = $convertToCentimeters->originalLongitud($_POST['longitud1'], $_POST['valor']);
+      $resultado = 'cm' . ' ' .  $convertToCentimeters->originalLongitud($_POST['longitud1'], $_POST['valor']);
     } elseif ($longitud2 == 'm') {
       $convertToMeters = new ToMeters();
-      $resultado = $convertToMeters->originalLongitud($_POST['longitud1'], $_POST['valor']);
+      $resultado = 'm' . ' ' .  $convertToMeters->originalLongitud($_POST['longitud1'], $_POST['valor']);
     } elseif ($longitud2 == 'dm') {
       $convertToDecimeters = new ToDecimeters();
-      $resultado = $convertToDecimeters->originalLongitud($_POST['longitud1'], $_POST['valor']);
+      $resultado = 'dm' . ' ' .  $convertToDecimeters->originalLongitud($_POST['longitud1'], $_POST['valor']);
     } elseif ($longitud2 == 'hm') {
       $convertToHectometers = new ToHectometers();
-      $resultado = $convertToHectometers->originalLongitud($_POST['longitud1'], $_POST['valor']);
+      $resultado = 'km' . ' ' .  $convertToHectometers->originalLongitud($_POST['longitud1'], $_POST['valor']);
     } elseif ($longitud2 == 'km') {
       $convertToKilometers = new ToKilometers();
       $resultado = $convertToKilometers->originalLongitud($_POST['longitud1'], $_POST['valor']);

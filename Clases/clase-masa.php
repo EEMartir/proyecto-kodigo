@@ -1,10 +1,10 @@
 <?php
 
-interface Conversor { 
+interface ConversorMasa { 
     public function originalMass($original, $valor);
 }
 
-class toMiligramo implements Conversor {
+class toMiligramo implements ConversorMasa {
 
     //Miligramo to Gramo(G) ----- [amount] / 1000  
     //Miligramo to Kilogramo(Kg) ----- [amount] /1E+6
@@ -33,7 +33,7 @@ class toMiligramo implements Conversor {
             $resultado = $valor / 28350;
             return $resultado;
         } elseif($original == "Mg"){
-            return "No contiene suficiente peso";
+            return $resultado =  "Misma unidad de masa";
         } else {
             echo "Este valor no existe";
         }
@@ -43,7 +43,7 @@ class toMiligramo implements Conversor {
     }
 }
 
-class toGramo implements Conversor {
+class toGramo implements ConversorMasa {
 
     //Gramo to Miligramo(Mg) ----- [amount] * 1000  
     //Gramo to Kilogramo(Kg) ----- [amount] / 1000
@@ -72,7 +72,7 @@ class toGramo implements Conversor {
             $resultado = $valor / 28.35;
             return $resultado;
         } elseif($original == "G"){
-            return "No contiene suficiente peso";
+            return $resultado =  "Misma unidad de masa";
         } else {
             echo "Este valor no existe";
         }
@@ -82,7 +82,7 @@ class toGramo implements Conversor {
     }
 }
 
-class toKilogramo implements Conversor {
+class toKilogramo implements ConversorMasa {
 
     //Kilogramo to Miligramo(Mg) ----- [amount] * 1E+6  
     //Kilogramo to Gramo(G) ----- [amount] * 1000
@@ -111,7 +111,7 @@ class toKilogramo implements Conversor {
             $resultado = $valor * 35.274;
             return $resultado;
         } elseif($original == "Kg"){
-            return "No contiene suficiente peso";
+            return $resultado =  "Misma unidad de masa";
         } else {
             echo "Este valor no existe";
         }
@@ -121,7 +121,7 @@ class toKilogramo implements Conversor {
     }
 }
 
-class toTonelada implements Conversor {
+class toTonelada implements ConversorMasa {
 
     //Tonelada to Miligramo(Mg) ----- [amount] * 1E+9  
     //Tonelada to Gramo(G) ----- [amount] * 1E+6
@@ -150,7 +150,7 @@ class toTonelada implements Conversor {
             $resultado = $valor * 35274;
             return $resultado;
         } elseif($original == "T"){
-            return "No contiene suficiente peso";
+            return $resultado =  "Misma unidad de masa";
         } else {
             echo "Este valor no existe";
         }
@@ -160,7 +160,7 @@ class toTonelada implements Conversor {
     }
 }
 
-class toLibra implements Conversor {
+class toLibra implements ConversorMasa {
 
     //Libra to Miligramo(Mg) ----- [amount] * 453592  
     //Libra to Gramo(G) ----- [amount] * 454
@@ -189,7 +189,7 @@ class toLibra implements Conversor {
             $resultado = $valor * 16;
             return $resultado;
         } elseif($original == "Lb"){
-            return "No contiene suficiente peso";
+            return $resultado =  "Misma unidad de masa";
         } else {
             echo "Este valor no existe";
         }
@@ -199,7 +199,7 @@ class toLibra implements Conversor {
     }
 }
 
-class toOnza implements Conversor {
+class toOnza implements ConversorMasa {
 
     //Onza to Miligramo(Mg) ----- [amount] * 28350  
     //Onza to Gramo(G) ----- [amount] * 28.35
@@ -228,7 +228,7 @@ class toOnza implements Conversor {
             $resultado = $this->$valor / 16;
             return $resultado;
         } elseif($original == "Oz"){
-            return "No contiene suficiente peso";
+            return $resultado =  "Misma unidad de masa";
         } else {
             echo "Este valor no existe";
         }

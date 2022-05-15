@@ -50,6 +50,5 @@ if(isset($_POST['masa1']) &&
         $resultado = "Peso no Valido";
     }
 }
-  // Considera eliminar la opcion de convertir de monedas iguales----
 
 ?>

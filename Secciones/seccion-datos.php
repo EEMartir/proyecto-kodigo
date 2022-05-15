@@ -1,3 +1,13 @@
+<?php
+$options = [
+    'B' => 'Byte',
+    'KB' => 'Kilobyte',
+    'MB' => 'Megabyte',
+    'GB' => 'Gigabyte',
+    'TB' => 'Terabyte',
+    'PB' => 'Petabyte'
+];
+?>
 <style>
 h1{
     text-align: center;
@@ -57,12 +67,9 @@ input[type="text" i]{
 
     <label for="Convertir1">Convertir de: </label><br/>
     <select name="datos1" id="datos1">
-        <option value="">Byte</option>
-        <option value="">Kilobyte</option>
-        <option value="">Megabyte</option>
-        <option value="">Gigabyte</option>
-        <option value="">Terabyte</option>
-        <option value="">Petabyte</option>
+    <?php foreach ($options as $key => $label) { ?>
+            <option value="<?= $key?>"<?=(isset($_POST['datos1']) && $_POST['datos1'] == $key) ? 'selected= "selected"' : '' ?>><?= $label ?></option>
+<?php } ?>
     </select><br/><br/>
 
     <label for="valor">Valor</label><br/>
@@ -80,11 +87,9 @@ input[type="text" i]{
     <label for="Convertir2">Convertir a: </label><br/>
     <select name="datos2" id="datos2">
     <option value="">Byte</option>
-        <option value="">Kilobyte</option>
-        <option value="">Megabyte</option>
-        <option value="">Gigabyte</option>
-        <option value="">Terabyte</option>
-        <option value="">Petabyte</option>
+    <?php foreach ($options as $key => $label) { ?>
+            <option value="<?= $key?>"<?=(isset($_POST['datos2']) && $_POST['datos2'] == $key) ? 'selected= "selected"' : '' ?>><?= $label ?></option>
+<?php } ?>
     </select><br/><br/>
 
     <input class="btn" type="submit" value="Convertir" name="convertir">

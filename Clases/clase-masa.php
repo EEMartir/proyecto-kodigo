@@ -18,19 +18,19 @@ class toMiligramo implements Conversor {
 
         if(!empty($this->valor)){
         if($original == "G" ){
-            $resultado = $this->$valor / 1000;
+            $resultado = $valor / 1000;
             return $resultado;
         } elseif ($original == "Kg") { 
-            $resultado = $this->$valor / 1e+6;
+            $resultado = $valor / 1e+6;
             return $resultado;
         } elseif ($original == "T") { 
-            $resultado = $this->$valor / 1e+9;
+            $resultado = $valor / 1e+9;
             return $resultado;
         } elseif ($original == "Lb") { 
-            $resultado = $this->$valor / 453592;
+            $resultado = $valor / 453592;
             return $resultado;
         } elseif($original == "Oz"){
-            $resultado = $this->$valor / 28350;
+            $resultado = $valor / 28350;
             return $resultado;
         } elseif($original == "Mg"){
             return "No contiene suficiente peso";
@@ -57,19 +57,19 @@ class toGramo implements Conversor {
 
         if(!empty($this->valor)){
         if($original == "Mg" ){
-            $resultado = $this->$valor * 1000;
+            $resultado = $valor * 1000;
             return $resultado;
         } elseif ($original == "Kg") { 
-            $resultado = $this->$valor / 1000;
+            $resultado = $valor / 1000;
             return $resultado;
         } elseif ($original == "T") { 
-            $resultado = $this->$valor / 1e+6;
+            $resultado = $valor / 1e+6;
             return $resultado;
         } elseif ($original == "Lb") { 
-            $resultado = $this->$valor / 454;
+            $resultado = $valor / 454;
             return $resultado;
         } elseif($original == "Oz"){
-            $resultado = $this->$valor / 28.35;
+            $resultado = $valor / 28.35;
             return $resultado;
         } elseif($original == "G"){
             return "No contiene suficiente peso";
@@ -96,19 +96,19 @@ class toKilogramo implements Conversor {
 
         if(!empty($this->valor)){
         if($original == "Mg" ){
-            $resultado = $this->$valor * 1e+6;
+            $resultado = $valor * 1e+6;
             return $resultado;
         } elseif ($original == "G") { 
-            $resultado = $this->$valor * 1000;
+            $resultado = $valor * 1000;
             return $resultado;
         } elseif ($original == "T") { 
-            $resultado = $this->$valor / 1000;
+            $resultado = $valor / 1000;
             return $resultado;
         } elseif ($original == "Lb") { 
-            $resultado = $this->$valor * 2.205;
+            $resultado = $valor * 2.205;
             return $resultado;
         } elseif($original == "Oz"){
-            $resultado = $this->$valor * 35.274;
+            $resultado = $valor * 35.274;
             return $resultado;
         } elseif($original == "Kg"){
             return "No contiene suficiente peso";
@@ -135,19 +135,19 @@ class toTonelada implements Conversor {
 
         if(!empty($this->valor)){
         if($original == "Mg" ){
-            $resultado = $this->$valor * 1e+9;
+            $resultado = $valor * 1e+9;
             return $resultado;
         } elseif ($original == "G") { 
-            $resultado = $this->$valor * 1e+6;
+            $resultado = $valor * 1e+6;
             return $resultado;
         } elseif ($original == "Kg") { 
-            $resultado = $this->$valor * 1000;
+            $resultado = $valor * 1000;
             return $resultado;
         } elseif ($original == "Lb") { 
-            $resultado = $this->$valor * 2205;
+            $resultado = $valor * 2205;
             return $resultado;
         } elseif($original == "Oz"){
-            $resultado = $this->$valor * 35274;
+            $resultado = $valor * 35274;
             return $resultado;
         } elseif($original == "T"){
             return "No contiene suficiente peso";
@@ -174,19 +174,19 @@ class toLibra implements Conversor {
 
         if(!empty($this->valor)){
         if($original == "Mg" ){
-            $resultado = $this->$valor * 453592;
+            $resultado = $valor * 453592;
             return $resultado;
         } elseif ($original == "G") { 
-            $resultado = $this->$valor * 454;
+            $resultado = $valor * 454;
             return $resultado;
         } elseif ($original == "Kg") { 
-            $resultado = $this->$valor / 2.205;
+            $resultado = $valor / 2.205;
             return $resultado;
         } elseif ($original == "T") { 
-            $resultado = $this->$valor / 2205;
+            $resultado = $valor / 2205;
             return $resultado;
         } elseif($original == "Oz"){
-            $resultado = $this->$valor * 16;
+            $resultado = $valor * 16;
             return $resultado;
         } elseif($original == "Lb"){
             return "No contiene suficiente peso";

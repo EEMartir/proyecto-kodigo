@@ -16,6 +16,7 @@ class toMiligramo implements Conversor {
         $this->original = $original;
         $this->valor = $valor;
 
+        if(!empty($this->valor)){
         if($original == "G" ){
             $resultado = $valor / 1000;
             return $resultado;
@@ -36,6 +37,9 @@ class toMiligramo implements Conversor {
         } else {
             echo "Este valor no existe";
         }
+    } elseif(empty($this->valor)) {
+        $resultado = false;
+    }
     }
 }
 
@@ -51,6 +55,7 @@ class toGramo implements Conversor {
         $this->original = $original;
         $this->valor = $valor;
 
+        if(!empty($this->valor)){
         if($original == "Mg" ){
             $resultado = $valor * 1000;
             return $resultado;
@@ -71,6 +76,9 @@ class toGramo implements Conversor {
         } else {
             echo "Este valor no existe";
         }
+    } elseif(empty($this->valor)) {
+        $resultado = false;
+    }
     }
 }
 
@@ -86,6 +94,7 @@ class toKilogramo implements Conversor {
         $this->original = $original;
         $this->valor = $valor;
 
+        if(!empty($this->valor)){
         if($original == "Mg" ){
             $resultado = $valor * 1e+6;
             return $resultado;
@@ -106,6 +115,9 @@ class toKilogramo implements Conversor {
         } else {
             echo "Este valor no existe";
         }
+    } elseif(empty($this->valor)) {
+        $resultado = false;
+    }
     }
 }
 
@@ -121,6 +133,7 @@ class toTonelada implements Conversor {
         $this->original = $original;
         $this->valor = $valor;
 
+        if(!empty($this->valor)){
         if($original == "Mg" ){
             $resultado = $valor * 1e+9;
             return $resultado;
@@ -141,6 +154,9 @@ class toTonelada implements Conversor {
         } else {
             echo "Este valor no existe";
         }
+    }  elseif(empty($this->valor)) {
+        $resultado = false;
+    }
     }
 }
 
@@ -156,6 +172,7 @@ class toLibra implements Conversor {
         $this->original = $original;
         $this->valor = $valor;
 
+        if(!empty($this->valor)){
         if($original == "Mg" ){
             $resultado = $valor * 453592;
             return $resultado;
@@ -176,6 +193,9 @@ class toLibra implements Conversor {
         } else {
             echo "Este valor no existe";
         }
+    } elseif(empty($this->valor)) {
+        $resultado = false;
+    }
     }
 }
 
@@ -191,26 +211,30 @@ class toOnza implements Conversor {
         $this->original = $original;
         $this->valor = $valor;
 
+        if(!empty($this->valor)){
         if($original == "Mg" ){
-            $resultado = $valor * 28350;
+            $resultado = $this->$valor * 28350;
             return $resultado;
         } elseif ($original == "G") { 
-            $resultado = $valor * 28.35;
+            $resultado = $this->$valor * 28.35;
             return $resultado;
         } elseif ($original == "Kg") { 
-            $resultado = $valor / 35.274;
+            $resultado = $this->$valor / 35.274;
             return $resultado;
         } elseif ($original == "T") { 
-            $resultado = $valor / 35274;
+            $resultado = $this->$valor / 35274;
             return $resultado;
         } elseif($original == "Lb"){
-            $resultado = $valor / 16;
+            $resultado = $this->$valor / 16;
             return $resultado;
         } elseif($original == "Oz"){
             return "No contiene suficiente peso";
         } else {
             echo "Este valor no existe";
         }
+    } elseif(empty($this->valor)) {
+        $resultado = false;
+    }
     }
 }
 

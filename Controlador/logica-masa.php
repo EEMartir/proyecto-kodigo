@@ -14,37 +14,39 @@ if(isset($_POST['masa1']) &&
     $valor = $_POST['valor'];
     $convertir = $_POST['convertir'];
     
-    if($masa2 == 'Miligramo') { 
+    if($masa2 == 'Mg') { 
 
         $convertirMiligramo = new toMiligramo();
-        $resultado = 'Mg' . ' ' . $convertirMiligramo->originalMass($masa1, $valor);
+        $resultado = 'Mg' . ' ' . $convertirMiligramo->originalMass($_POST['masa1'], $_POST['valor']);
 
-    } elseif ($masa2 == 'Gramo') {
+    } elseif ($masa2 == 'G') {
 
        $convertirGramo = new toGramo();
        $resultado = 'G' . ' ' . $convertirGramo->originalMass($_POST['masa1'], $_POST['valor']);
 
-    } elseif ($masa2 == 'Kilogramo') {
+    } elseif ($masa2 == 'Kg') {
 
         $convertirKilogramo = new toKilogramo();
         $resultado = 'KG' . ' ' .  $convertirKilogramo->originalMass($_POST['masa1'], $_POST['valor']);
         
-    }elseif ($masa2 == 'Tonelada') {
+    }elseif ($masa2 == 'T') {
 
         $convertirTonelada = new toTonelada();
         $resultado = 'T' . ' ' .  $convertirTonelada->originalMass($_POST['masa1'], $_POST['valor']);
         
-    } elseif ($masa2 == 'Libra') {
+    } elseif ($masa2 == 'Lb') {
 
         $convertirLibra = new toLibra();
         $resultado = 'Lb' . ' ' .  $convertirLibra->originalMass($_POST['masa1'], $_POST['valor']);
     
-    } elseif ($masa2 == 'Onza') {
+    } elseif ($masa2 == 'Oz') {
 
         $convertirOnza = new toOnza();
         $resultado = 'Oz' . ' ' .  $convertirOnza->originalMass($_POST['masa1'], $_POST['valor']);
        
-    } else {
+    }elseif(isset($_POST['limpiar'])){
+      header('Location: index.php'); 
+    }else {
         $resultado = "Peso no Valido";
     }
 }

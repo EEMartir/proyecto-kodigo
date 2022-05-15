@@ -48,6 +48,18 @@ input[type="text" i]{
   opacity: 0.9;
 }
 </style>
+<?php
+
+$options = [
+    'km' => 'Kilometro',
+    'hm' => 'Hectometro',
+    'm' => 'Metro',
+    'dm' => 'Decimetro',
+    'cm' => 'Centimetro',
+    'mm' => 'Milimetro',
+]
+
+?>
 
 <h1>Conversor de Longitud</h1>
 <p>Indica la longitud original, el valor de la longitud, seguido del tipo de longitud a la que quieres convertir</p>
@@ -56,13 +68,11 @@ input[type="text" i]{
 <form class="form-section" action="" method="POST">
 
     <label for="Convertir1">Convertir de: </label><br/>
+    <!-- Menu desplegable dinamico -->
     <select name="longitud1" id="longitud1">
-        <option value="km">Kilometro</option>
-        <option value="hm">Hectometro</option>
-        <option value="m">Metro</option>
-        <option value="dm">Decimetro</option>
-        <option value="cm">Centimetro</option>
-        <option value="mm">Milimetro</option>
+    <?php foreach ($options as $key => $label) { ?>
+        <option value="<?= $key ?>"<?= (isset($_POST['longitud1']) && $_POST['longitud1'] == $key ) ? ' selected="selected"' : ''?>><?= $label ?></option>
+    <?php } ?>
     </select><br/><br/>
 
     <label for="valor">Valor</label><br/>
@@ -72,19 +82,18 @@ input[type="text" i]{
     <?php
         if(isset($convertir) && empty($valor)) {
             echo "<small style='color:red'>Instroduce un valor</small></br></br>";
-        } elseif(isset($convertir) && preg_match('/^(?![0.]+$)\d+(\.\d{1,2})?$/', !empty($valor))){
+            $resultado = false;
+        } elseif(isset($convertir) && !preg_match('/^(?![0.]+$)\d+(\.\d{1,2})?$/', $valor)){
             echo "<small style='color:red'>Introduce numeros validos</small></br></br>";
+            $resultado = false;
         }
     ?>
 
     <label for="Convertir2">Convertir a: </label><br/>
     <select name="longitud2" id="longitud2">
-    <option value="km">Kilometro</option>
-        <option value="hm">Hectometro</option>
-        <option value="m">Metro</option>
-        <option value="dm">Decimetro</option>
-        <option value="cm">Centimetro</option>
-        <option value="mm">Milimetro</option>
+    <?php foreach ($options as $key => $label) { ?>
+        <option value="<?= $key ?>"<?= (isset($_POST['longitud2']) && $_POST['longitud2'] == $key ) ? ' selected="selected"' : ''?>><?= $label ?></option>
+    <?php } ?>
     </select><br/><br/>
 
     <input class="btn" type="submit" value="Convertir" name="convertir">
@@ -99,5 +108,7 @@ input[type="text" i]{
     ?>
 
     <form action="">
+    <p>
     <input class="btn" type="submit" value="Limpiar" name="limpiar">
+    </p>
     </form>

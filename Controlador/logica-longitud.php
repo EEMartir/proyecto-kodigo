@@ -20,7 +20,9 @@ if(isset($_POST['longitud1']) &&
     } elseif ($longitud2 == 'cm') {
       $convertToCentimeters = new ToCentimeters();
       $resultado = $convertToCentimeters->originalLongitud($_POST['longitud1'], $_POST['valor']);
-
+    } elseif ($longitud2 == 'm') {
+      $convertToMeters = new ToMeters();
+      $resultado = $convertToMeters->originalLongitud($_POST['longitud1'], $_POST['valor']);
     } elseif ($longitud2 == 'dm') {
       $convertToDecimeters = new ToDecimeters();
       $resultado = $convertToDecimeters->originalLongitud($_POST['longitud1'], $_POST['valor']);
@@ -30,6 +32,8 @@ if(isset($_POST['longitud1']) &&
     } elseif ($longitud2 == 'km') {
       $convertToKilometers = new ToKilometers();
       $resultado = $convertToKilometers->originalLongitud($_POST['longitud1'], $_POST['valor']);
+    }elseif(isset($_POST['limpiar'])){
+      header('Location: index.php');
     } else {
       $resultado = "Longitud no valida";
     }

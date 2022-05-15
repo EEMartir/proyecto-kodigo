@@ -98,7 +98,7 @@ input[type="text" i]{
         <option value="<?= $key?>"<?= (isset($_POST['moneda2']) && $_POST['moneda2'] == $key) ? 'selected= "selected"' : '' ?>><?= $label ?></option>
     <?php } ?>
     </select><br/><br/>
-    <input type="submit" value="Convertir" name="convertir">
+    <input  class="btn" type="submit" value="Convertir" name="convertir">
 
     </form>
     </div>
@@ -111,6 +111,6 @@ input[type="text" i]{
     ?>
 
     <form action="">
-    <p><input type="submit" value="Limpiar Pantalla" name="limpiar"></p>
+    <p><input class="btn" type="submit" value="Limpiar Pantalla" name="limpiar"></p>
     </form>
 

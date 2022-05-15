@@ -1,3 +1,13 @@
+<?php
+$options = [
+    'Mg' => 'Miligramo',
+    'G' => 'Gramo',
+    'Kg' => 'Kilogramo',
+    'T' => 'Tonelada',
+    'Lb' => 'Libra',
+    'Oz' => 'Onza'
+];
+?>
 <style>
 h1{
     text-align: center;
@@ -61,12 +71,9 @@ input[type="submit"]{
 
     <label for="Convertir1">Convertir de: </label><br/>
     <select name="masa1" id="masa1">
-        <option value="mg">Miligramo</option>
-        <option value="g">Gramo</option>
-        <option value="kg">Kilogramo</option>
-        <option value="t">Tonelada</option>
-        <option value="lb">Libra</option>
-        <option value="oz">Onza</option>
+    <?php foreach ($options as $key => $label) { ?>
+            <option value="<?= $key?>"<?=(isset($_POST['masa1']) && $_POST['masa1'] == $key) ? 'selected= "selected"' : '' ?>><?= $label ?></option>
+    <?php } ?>
     </select><br/><br/>
 
     <label for="valor">Valor</label><br/>
@@ -84,11 +91,9 @@ input[type="submit"]{
     <label for="Convertir2">Convertir a: </label><br/>
     <select name="masa2" id="masa2">
     <option value="mg">Miligramo</option>
-        <option value="g">Gramo</option>
-        <option value="kg">Kilogramo</option>
-        <option value="t">Tonelada</option>
-        <option value="lb">Libra</option>
-        <option value="oz">Onza</option>
+    <?php foreach ($options as $key => $label) { ?>
+            <option value="<?= $key?>"<?=(isset($_POST['masa2']) && $_POST['masa2'] == $key) ? 'selected= "selected"' : '' ?>><?= $label ?></option>
+<?php } ?>
     </select><br/><br/>
 
     <input class="btn" type="submit" value="Convertir" name="convertir">

@@ -39,7 +39,7 @@ if(isset($_POST['masa1']) &&
         $convertirLibra = new toLibra();
         $resultado = 'Lb' . ' ' .  $convertirLibra->originalMass($_POST['masa1'], $_POST['valor']);
     
-    } elseif ($moneda2 == 'PetaByte') {
+    } elseif ($masa2 == 'Onza') {
 
         $convertirOnza = new toOnza();
         $resultado = 'Oz' . ' ' .  $convertirOnza->originalMass($_POST['masa1'], $_POST['valor']);

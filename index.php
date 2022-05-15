@@ -50,7 +50,7 @@
     <h3>Integrantes: </h3>
     <ul>
     <a href="https://github.com/jocgus7">Jose Guzman</a>
-    <a href="https://github.com/EEMartir" >Erick Martit</a>
+    <a href="https://github.com/EEMartir" >Erick Martir</a>
     <a href="https://github.com/DiegouB096">Diego Barrientos</a>    
     <a href="https://github.com/nelson2411">Nelson Rosales</a>
     </ul>

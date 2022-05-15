@@ -16,26 +16,31 @@ class toByte implements Conversor {
     public function originalData($original, $valor){
         $this->original = $original;
         $this->valor = $valor;
-
-        if($original == "KB" ){
-            $resultado = $valor / 1000;
-            return $resultado;
-        } elseif ($original == "MB") { 
-            $resultado = $valor / 1E+6;
-            return $resultado;
-        } elseif ($original == "GB") { 
-            $resultado = $valor / 1E+9;
-            return $resultado;
-        } elseif ($original == "TB") { 
-            $resultado = $valor / 1E+12;
-            return $resultado;
-        } elseif ($original == "PB") { 
-            $resultado = $valor / 1E+15;
-            return $resultado;
-        } elseif($original == "Byte"){
-            return "No contiene suficiente datos";
-        } else {
-            echo "Este valor no existe";
+        
+        if(!empty($this->valor)){
+            if($original == "KB" ){
+                $resultado = $this->valor / 1000;
+                return $resultado;
+            } elseif ($original == "MB") { 
+                $resultado = $this->valor / 1E+6;
+                return $resultado;
+            } elseif ($original == "GB") { 
+                $resultado = $this->valor / 1E+9;
+                return $resultado;
+            } elseif ($original == "TB") { 
+                $resultado = $this->valor / 1E+12;
+                return $resultado;
+            } elseif ($original == "PB") { 
+                $resultado = $this->valor / 1E+15;
+                return $resultado;
+            } elseif($original == "Byte"){
+                return "No contiene suficiente datos";
+            } else {
+                echo "Este valor no existe";
+            }
+    
+        } elseif(empty($this->valor)){
+        $resultado = false;
         }
     }
 }
@@ -54,25 +59,29 @@ class toKilobyte implements Conversor {
         $this->original = $original;
         $this->valor = $valor;
 
-        if($original == "B" ){
-            $resultado = $valor * 1000;
-            return $resultado;
-        } elseif ($original == "MB") { 
-            $resultado = $valor / 1000;
-            return $resultado;
-        } elseif ($original == "GB") { 
-            $resultado = $valor / 1E+6;
-            return $resultado;
-        } elseif ($original == "TB") { 
-            $resultado = $valor / 1E+9;
-            return $resultado;
-        } elseif ($original == "PB") { 
-            $resultado = $valor / 1E+12;
-            return $resultado;
-        } elseif($original == "Kilobyte"){
-            return "No contiene suficiente datos";
-        } else {
-            echo "Este valor no existe";
+        if(!empty($this->valor)){
+            if($original == "B" ){
+                $resultado = $this->valor * 1000;
+                return $resultado;
+            } elseif ($original == "MB") { 
+                $resultado = $this->valor / 1000;
+                return $resultado;
+            } elseif ($original == "GB") { 
+                $resultado = $this->valor / 1E+6;
+                return $resultado;
+            } elseif ($original == "TB") { 
+                $resultado = $this->valor / 1E+9;
+                return $resultado;
+            } elseif ($original == "PB") { 
+                $resultado = $this->valor / 1E+12;
+                return $resultado;
+            } elseif($original == "Kilobyte"){
+                return "No contiene suficiente datos";
+            } else {
+                echo "Este valor no existe";
+            }
+        } elseif(empty($this->valor)) {
+            $resultado = false;
         }
     }
 }  
@@ -91,25 +100,29 @@ class toMegabyte implements Conversor {
         $this->original = $original;
         $this->valor = $valor;
 
-        if($original == "B" ){
-            $resultado = $valor * 1e+6;
-            return $resultado;
-        } elseif ($original == "KB") { 
-            $resultado = $valor * 1000;
-            return $resultado;
-        } elseif ($original == "GB") { 
-            $resultado = $valor / 1000;
-            return $resultado;
-        } elseif ($original == "TB") { 
-            $resultado = $valor / 1E+6;
-            return $resultado;
-        } elseif ($original == "PB") { 
-            $resultado = $valor / 1E+9;
-            return $resultado;
-        } elseif($original == "MegaByte"){
-            return "No contiene suficiente datos";
-        } else {
-            echo "Este valor no existe";
+        if(!empty($this->valor)){
+            if($original == "B" ){
+                $resultado = $this->valor * 1e+6;
+                return $resultado;
+            } elseif ($original == "KB") { 
+                $resultado = $this->valor * 1000;
+                return $resultado;
+            } elseif ($original == "GB") { 
+                $resultado = $this->valor / 1000;
+                return $resultado;
+            } elseif ($original == "TB") { 
+                $resultado = $this->valor / 1E+6;
+                return $resultado;
+            } elseif ($original == "PB") { 
+                $resultado = $this->valor / 1E+9;
+                return $resultado;
+            } elseif($original == "MegaByte"){
+                return "No contiene suficiente datos";
+            } else {
+                echo "Este valor no existe";
+            }
+        } elseif(empty($this->valor)) {
+            $resultado = false;
         }
     }
 }
@@ -128,25 +141,29 @@ class toGigabyte implements Conversor {
         $this->original = $original;
         $this->valor = $valor;
 
-        if($original == "B" ){
-            $resultado = $valor * 1e+9;
-            return $resultado;
-        } elseif ($original == "KB") { 
-            $resultado = $valor * 1E+6;
-            return $resultado;
-        } elseif ($original == "MB") { 
-            $resultado = $valor * 1000;
-            return $resultado;
-        } elseif ($original == "TB") { 
-            $resultado = $valor / 1000;
-            return $resultado;
-        } elseif ($original == "PB") { 
-            $resultado = $valor / 1E+6;
-            return $resultado;
-        } elseif($original == "GigaByte"){
-            return "No contiene suficiente datos";
-        } else {
-            echo "Este valor no existe";
+        if(!empty($this->valor)){
+            if($original == "B" ){
+                $resultado = $this->valor * 1e+9;
+                return $resultado;
+            } elseif ($original == "KB") { 
+                $resultado = $this->valor * 1E+6;
+                return $resultado;
+            } elseif ($original == "MB") { 
+                $resultado = $this->valor * 1000;
+                return $resultado;
+            } elseif ($original == "TB") { 
+                $resultado = $this->valor / 1000;
+                return $resultado;
+            } elseif ($original == "PB") { 
+                $resultado = $this->valor / 1E+6;
+                return $resultado;
+            } elseif($original == "GigaByte"){
+                return "No contiene suficiente datos";
+            } else {
+                echo "Este valor no existe";
+            }
+        } elseif(empty($this->valor)) {
+            $resultado = false;
         }
     }
 }
@@ -165,25 +182,29 @@ class toTerabyte implements Conversor {
         $this->original = $original;
         $this->valor = $valor;
 
-        if($original == "B" ){
-            $resultado = $valor * 1E+12;
-            return $resultado;
-        } elseif ($original == "KB") { 
-            $resultado = $valor * 1E+9;
-            return $resultado;
-        } elseif ($original == "MB") { 
-            $resultado = $valor * 1E+6;
-            return $resultado;
-        } elseif ($original == "GB") { 
-            $resultado = $valor * 1000;
-            return $resultado;
-        } elseif ($original == "PB") { 
-            $resultado = $valor / 1000;
-            return $resultado;
-        } elseif($original == "TeraByte"){
-            return "No contiene suficiente datos";
-        } else {
-            echo "Este valor no existe";
+        if(!empty($this->valor)){
+            if($original == "B" ){
+                $resultado = $this->valor * 1E+12;
+                return $resultado;
+            } elseif ($original == "KB") { 
+                $resultado = $this->valor * 1E+9;
+                return $resultado;
+            } elseif ($original == "MB") { 
+                $resultado = $this->valor * 1E+6;
+                return $resultado;
+            } elseif ($original == "GB") { 
+                $resultado = $this->valor * 1000;
+                return $resultado;
+            } elseif ($original == "PB") { 
+            $resultado = $this->valor / 1000;
+                return $resultado;
+            } elseif($original == "TeraByte"){
+                return "No contiene suficiente datos";
+            } else {
+                echo "Este valor no existe";
+            }
+        } elseif(empty($this->valor)) {
+            $resultado = false;
         }
     }
 }
@@ -202,25 +223,29 @@ class toPetabyte implements Conversor {
         $this->original = $original;
         $this->valor = $valor;
 
-        if($original == "B" ){
-            $resultado = $valor * 1E+15;
-            return $resultado;
-        } elseif ($original == "KB") { 
-            $resultado = $valor * 1E+12;
-            return $resultado;
-        } elseif ($original == "MB") { 
-            $resultado = $valor * 1E+9;
-            return $resultado;
-        } elseif ($original == "GB") { 
-            $resultado = $valor * 1E+6;
-            return $resultado;
-        } elseif ($original == "TB") { 
-            $resultado = $valor * 1000;
-            return $resultado;
-        } elseif($original == "PetaByte"){
-            return "No contiene suficiente datos";
-        } else {
-            echo "Este valor no existe";
+        if(!empty($this->valor)){
+            if($original == "B" ){
+                $resultado = $this->valor * 1E+15;
+                return $resultado;
+            } elseif ($original == "KB") { 
+                $resultado = $this->valor * 1E+12;
+                return $resultado;
+            } elseif ($original == "MB") { 
+                $resultado = $this->valor * 1E+9;
+                return $resultado;
+            } elseif ($original == "GB") { 
+                $resultado = $this->valor * 1E+6;
+                return $resultado;
+            } elseif ($original == "TB") { 
+                $resultado = $this->valor * 1000;
+                return $resultado;
+            } elseif($original == "PetaByte"){
+                return "No contiene suficiente datos";
+            } else {
+                echo "Este valor no existe";
+            }
+        } elseif(empty($this->valor)) {
+            $resultado = false;
         }
     }
 }

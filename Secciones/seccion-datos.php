@@ -79,8 +79,10 @@ input[type="text" i]{
     <?php
         if(isset($convertir) && empty($valor)) {
             echo "<small style='color:red'>Instroduce un valor</small></br></br>";
-        } elseif(isset($convertir) && preg_match('/^(?![0.]+$)\d+(\.\d{1,2})?$/', !empty($valor))){
+            $resultado = false;
+        } elseif(isset($convertir) && !preg_match('/^(?![0.]+$)\d+(\.\d{1,2})?$/', $valor)){
             echo "<small style='color:red'>Introduce numeros validos</small></br></br>";
+            $resultado = false;
         }
     ?>
 

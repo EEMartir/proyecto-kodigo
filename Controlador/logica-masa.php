@@ -44,7 +44,9 @@ if(isset($_POST['masa1']) &&
         $convertirOnza = new toOnza();
         $resultado = 'Oz' . ' ' .  $convertirOnza->originalMass($_POST['masa1'], $_POST['valor']);
        
-    } else {
+    }elseif(isset($_POST['limpiar'])){
+      header('Location: index.php'); 
+    }else {
         $resultado = "Peso no Valido";
     }
 }

@@ -44,6 +44,8 @@ if(isset($_POST['dato1']) &&
         $convertirPetaByte = new toPetabyte();
         $resultado = 'PB' . ' ' .  $convertirPetaByte->originalData($_POST['dato1'], $_POST['valor']);
        
+    }elseif(isset($_POST['limpiar'])){
+        header("Location:index.php");
     } else {
         $resultado = "Dato no Valido";
     }

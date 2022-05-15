@@ -48,6 +48,16 @@ input[type="text" i]{
   opacity: 0.9;
 }
 </style>
+<?php
+$options = [
+    'seg' => 'Segundo',
+    'min' => 'Minuto',
+    'h' => 'Hora',
+    'd' => 'Dia',
+    'sm' => 'Semana',
+    'm' => 'Mes',        
+];
+?>
 
 <h1>Conversor de Tiempo</h1>
 <p>Indica la medida de tiempo original, el valor de la medida de tiempo, seguido del tipo de medida de tiempo al que quieres convertir</p>
@@ -57,13 +67,11 @@ input[type="text" i]{
 <form class="form-section" action="" method="POST">
 
     <label for="Convertir1">Convertir de: </label><br/>
+    <!-- Menu desplegable dinamico -->
     <select name="tiempo1" id="tiempo1">
-        <option value="seg">Segundo(s)</option>
-        <option value="min">Minuto(s)</option>
-        <option value="h">Hora(s)</option>
-        <option value="d">Dia(s)</option>
-        <option value="sm">Semana(s)</option>
-        <option value="m">Mes(es)</option>
+        <?php foreach ($options as $key => $label) { ?>
+            <option value="<?= $key?>"<?=(isset($_POST['tiempo1']) && $_POST['tiempo1'] == $key) ? 'selected= "selected"' : '' ?>><?= $label ?></option>
+        <?php } ?>
     </select><br/><br/>
 
     <label for="valor">Valor</label><br/>
@@ -73,19 +81,19 @@ input[type="text" i]{
     <?php
         if(isset($convertir) && empty($valor)) {
             echo "<small style='color:red'>Instroduce un valor</small></br></br>";
-        } elseif(isset($convertir) && preg_match('/^(?![0.]+$)\d+(\.\d{1,2})?$/', !empty($valor))){
+            $resultado = false;
+        } elseif(isset($convertir) && !preg_match('/^(?![0.]+$)\d+(\.\d{1,2})?$/', $valor)){
             echo "<small style='color:red'>Introduce numeros validos</small></br></br>";
+            $resultado = false;
         }
     ?>
 
     <label for="Convertir2">Convertir a: </label><br/>
+    <!-- Menu desplegable dinamico -->
     <select name="tiempo2" id="tiempo2">
-        <option value="seg">Segundo(s)</option>
-        <option value="min">Minuto(s)</option>
-        <option value="h">Hora(s)</option>
-        <option value="d">Dia(s)</option>
-        <option value="sm">Semana(s)</option>
-        <option value="m">Mes(es)</option>
+        <?php foreach ($options as $key => $label) { ?>
+            <option value="<?= $key?>"<?=(isset($_POST['tiempo2']) && $_POST['tiempo2'] == $key) ? 'selected= "selected"' : '' ?>><?= $label ?></option>
+        <?php } ?>
     </select><br/><br/>
 
     <input class="btn" type="submit" value="Convertir" name="convertir">
@@ -100,5 +108,5 @@ input[type="text" i]{
     ?>
 
     <form action="">
-    <input type="submit" value="Limpiar" name="limpiar">
+    <p><input class="btn" type="submit" value="Limpiar" name="limpiar"></p>
     </form>

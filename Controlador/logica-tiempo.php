@@ -20,19 +20,27 @@ if(isset($_POST['tiempo1']) &&
 
     } elseif ($tiempo2 == 'min') {
       $convertToMinutes = new ToMinutes();
-      $resultado = $convertToMinutes->originalTiempo($_POST['tiempo1'], $_POST['valor']);
+      $resultado = 'Minutos: ' . $convertToMinutes->originalTiempo($_POST['tiempo1'], $_POST['valor']);
     } elseif ($tiempo2 == 'h') {
       $convertToHours = new ToHours();
-      $resultado = $convertToHours->originalTiempo($_POST['tiempo1'], $_POST['valor']);
+      $resultado = 'Horas: ' . $convertToHours->originalTiempo($_POST['tiempo1'], $_POST['valor']);
     } elseif ($tiempo2 == 'd') {
       $convertToDays = new ToDays();
-      $resultado = $convertToDays->originalTiempo($_POST['tiempo1'], $_POST['valor']);
+      $resultado = 'Dias: ' . $convertToDays->originalTiempo($_POST['tiempo1'], $_POST['valor']);
+    } elseif ($tiempo2 == 'sm') {
+      $convertToWeeks = new ToWeeks();
+      $resultado = 'Semanas: ' . $convertToWeeks->originalTiempo($_POST['tiempo1'], $_POST['valor']);
+    
     } elseif ($tiempo2 == 'm') {
       $convertToMonths = new ToMonths();
-      $resultado = $convertToMonths->originalTiempo($_POST['tiempo1'], $_POST['valor']);
+      $resultado = 'Meses: ' . $convertToMonths->originalTiempo($_POST['tiempo1'], $_POST['valor']);
+    } elseif(isset($_POST['limpiar'])){
+        header("Location:index.php");
     } else {
-      $resultado = "Tiempo no valido";
+        $resultado = "Tiempo no valido";
     }
+    
+    
   }
 
 ?>

@@ -17,6 +17,7 @@ class ToSeconds implements ConversorTiempo {
     $this->original = $original;
     $this->valor = $valor;
 
+    if(!empty($this->valor)){
     if($original == "seg") {
       return "Misma unidad de tiempo";
   } elseif ($original == "min") {
@@ -38,6 +39,9 @@ class ToSeconds implements ConversorTiempo {
   } else {
       return "Tiempo no valido";
   }
+}elseif(empty($this->valor)){
+  $resultado = false;
+}
 }
 }
 
@@ -52,6 +56,7 @@ class ToMinutes implements ConversorTiempo {
     $this->original = $original;
     $this->valor = $valor;
 
+    if(!empty($this->valor)){
     switch ($original) {
       case 'seg':
         return $resultado = $valor / 60;
@@ -71,10 +76,16 @@ class ToMinutes implements ConversorTiempo {
       case 'm':
         return $resultado = $valor * 43829.2;
         break;
+      case (empty($original) || empty($valor)):
+        return $resultado = false;
+        break;
       default:
         echo "Este valor no existe";
         break;
     }
+  }elseif(empty($this->valor)){
+    $resultado = false;
+  }
   }
 }
 
@@ -89,6 +100,7 @@ class ToHours implements ConversorTiempo {
     $this->original = $original;
     $this->valor = $valor;
 
+    if(!empty($this->valor)){
     switch ($original) {
       case 'seg':
         return $resultado = $valor / 3600;
@@ -107,14 +119,18 @@ class ToHours implements ConversorTiempo {
         break;
       case 'm':
         return $resultado = $valor * 730.48;
-        break;
+        break;      
       default:
         echo "Este valor no existe";
         break;
 
     }
+  }elseif(empty($this->valor)){
+    $resultado = false;
   }
-}
+  }
+  }
+
 
 class ToDays implements ConversorTiempo {
   // seconds to days ----- [amount] / 86400
@@ -127,6 +143,7 @@ class ToDays implements ConversorTiempo {
     $this->original = $original;
     $this->valor = $valor;
 
+    if(!empty($this->valor)){
     switch ($original) {
       case 'seg':
         return $resultado = $valor / 86400;
@@ -146,12 +163,19 @@ class ToDays implements ConversorTiempo {
       case 'm':
        return  $resultado = $valor * 30.4375;
         break;
+      case (empty($original) || empty($valor)):
+        return $resultado = false;
+        break;
       default:
         echo "Este valor no existe";
         break;
     }
+  }elseif(empty($this->valor)){
+    $resultado = false;
   }
-}
+  }
+  }
+
 
 class ToWeeks implements ConversorTiempo {
   // seconds to weeks ----- [amount] / 604800
@@ -164,6 +188,7 @@ class ToWeeks implements ConversorTiempo {
     $this->original = $original;
     $this->valor = $valor;
 
+    if(!empty($this->valor)){
     switch ($original) {
       case 'seg':
         return $resultado = $valor / 604800;
@@ -183,11 +208,18 @@ class ToWeeks implements ConversorTiempo {
       case 'm':
         return $resultado = $valor * 4.34812;
         break;
+      case (empty($original) || empty($valor)):
+        return $resultado = false;
+        break;
       default:
         echo "Este valor no existe";
         break;
         
     }
+  }elseif(empty($this->valor)){
+    $resultado = false;
+  }
+  
   }
 }
 
@@ -202,6 +234,7 @@ class ToMonths implements ConversorTiempo {
     $this->original = $original;
     $this->valor = $valor;
 
+    if(!empty($this->valor)){
     switch ($original) {
       case 'seg':
         return $resultado = $valor / 2678400;
@@ -221,12 +254,18 @@ class ToMonths implements ConversorTiempo {
       case 'm':
         return $resultado = "Misma unidad de tiempo";
         break;
+      case (empty($original) || empty($valor)):
+        return $resultado = false;
+        break;
       default:
         echo "Este valor no existe";
         break;
 
     }
-
+  }elseif(empty($this->valor)){
+    $resultado = false;
+  
+  }
   }
 }
 

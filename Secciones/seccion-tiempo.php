@@ -75,7 +75,7 @@ $options = [
     </select><br/><br/>
 
     <label for="valor">Valor</label><br/>
-    <input type="text" name="valor"><br/><br/>
+    <input type="text" name="valor" value="<?php echo isset($_POST['valor']) ? $_POST['valor'] : '' ?>" /><br/><br/>
     <nobr></nobr>
 
     <?php
